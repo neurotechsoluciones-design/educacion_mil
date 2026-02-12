@@ -279,9 +279,9 @@
       </div>
       
       <div class="flex flex-col items-center justify-center mb-6">
-        <div class="text-2xl md:text-4xl font-orbitron font-black tracking-tight flex items-center justify-center flex-wrap gap-x-3 gap-y-1 min-h-[5rem]">
-            <span id="typewriter-text" class="flex flex-wrap justify-center gap-2 md:gap-3 text-center leading-tight"></span>
-            <span class="cursor-bar"></span>
+        <!-- Eliminamos las clases flex que separaban el cursor y usamos text-center y leading-tight -->
+        <div class="text-2xl md:text-4xl font-orbitron font-black tracking-tight text-center min-h-[5rem] leading-tight px-2 max-w-4xl mx-auto">
+            <span id="typewriter-text"></span><span class="cursor-bar"></span>
         </div>
       </div>
 
@@ -362,7 +362,7 @@
           </div>
         </article>
 
-        <!-- SECCIÓN RCI (MOVIDA AQUÍ) -->
+        <!-- SECCIÓN RCI -->
         <section class="glass-panel rounded-3xl p-8 border border-white/5 relative overflow-hidden group">
             <div class="absolute -right-20 -top-20 w-60 h-60 bg-neuro-blue rounded-full filter blur-[100px] opacity-10 group-hover:opacity-20 transition-opacity duration-700"></div>
 
@@ -384,19 +384,22 @@
                         ROL
                     </div>
                     <p class="text-xs text-gray-300 leading-relaxed font-light">
-                        Define la <strong class="text-white">identidad y experticia</strong> de la IA. Es el "quién".<br><br>
-                        <span class="italic text-neuro-green/60 text-[10px]">Ej: "Actúa como experto en Marketing..."</span>
+                        Define la <strong class="text-white">identidad y experticia</strong> de la IA. Es el "quién".<br>
+                        La IA responde mejor cuando tiene un rol claro.<br><br>
+                        <span class="italic text-white text-[10px]">Ej: "Actúa como experto en Marketing..."</span>
                     </p>
                 </div>
                 <!-- CONTEXTO -->
                 <div class="group/card bg-black/40 border border-white/5 rounded-2xl p-6 hover:bg-neuro-blue/5 transition-all hover:border-neuro-blue/30">
-                    <div class="text-neuro-blue-light font-orbitron font-bold text-lg mb-3 flex items-center gap-3">
+                    <!-- Color azul mejorado a blue-400 para contraste -->
+                    <div class="text-blue-400 font-orbitron font-bold text-lg mb-3 flex items-center gap-3">
                         <span class="w-8 h-8 rounded-lg bg-neuro-blue/10 flex items-center justify-center text-sm shadow-[0_0_10px_rgba(33,0,229,0.3)]">C</span>
                         CONTEXTO
                     </div>
                     <p class="text-xs text-gray-300 leading-relaxed font-light">
-                        Establece el <strong class="text-white">escenario y los datos</strong> previos. Es el "dónde".<br><br>
-                        <span class="italic text-neuro-blue-light/80 text-[10px]">Ej: "Tengo un negocio de turismo y..."</span>
+                        Establece el <strong class="text-white">escenario y los datos</strong> previos. Es el "dónde".<br>
+                        El contexto define la calidad del resultado.<br><br>
+                        <span class="italic text-white text-[10px]">Ej: "Tengo un negocio de turismo y..."</span>
                     </p>
                 </div>
                 <!-- INSTRUCCIÓN -->
@@ -406,101 +409,15 @@
                         INSTRUCCIÓN
                     </div>
                     <p class="text-xs text-gray-300 leading-relaxed font-light">
-                        Ordena la <strong class="text-white">acción específica</strong> y el formato de salida. Es el "qué".<br><br>
-                        <span class="italic text-neuro-green/60 text-[10px]">Ej: "Crea una tabla con 3 ideas..."</span>
+                        Ordena la <strong class="text-white">acción específica</strong> y el formato de salida. Es el "qué".<br>
+                        Las instrucciones específicas evitan respuestas genéricas.<br><br>
+                        <span class="italic text-white text-[10px]">Ej: "Crea una tabla con 3 ideas..."</span>
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- TARJETA PROMPT 2 - ACTUALIZADA CON EL NUEVO PROMPT -->
-        <article class="glass-panel rounded-3xl p-1 relative group">
-          <div class="absolute -inset-0.5 bg-gradient-to-r from-neuro-blue to-purple-600 opacity-10 group-hover:opacity-30 rounded-3xl blur transition duration-500"></div>
-          <div class="relative bg-neuro-dark/90 h-full rounded-[20px] p-6 md:p-8 overflow-hidden">
-            <div class="relative z-10">
-              <div class="flex items-center gap-3 mb-6">
-                <span class="bg-neuro-blue/10 border border-neuro-blue/30 text-neuro-blue-light font-orbitron font-bold text-[10px] px-3 py-1 rounded-full tracking-wider">
-                  FASE 02
-                </span>
-                <h3 class="text-xl font-orbitron font-bold text-white tracking-wide">Prompt Maestro</h3>
-              </div>
-              <p class="text-sm text-gray-300 mb-6 font-light border-l-2 border-neuro-blue/30 pl-4">
-                Convierte a la IA en un Ingeniero de Prompts para mejorar tus propias instrucciones.
-              </p>
-              <div class="bg-black/80 rounded-xl border border-white/5 p-6 font-mono text-sm text-gray-300 leading-relaxed shadow-inner">
-                <div id="prompt-content-2">
-<div class="mb-4">
-  <strong class="text-neuro-green">## Rol</strong><br>
-  Actuá como ingeniero de prompts experto, especializado en optimización y diseño de instrucciones para IA.
-</div>
-<div class="mb-4">
-  <strong class="text-neuro-green">## Contexto</strong><br>
-  Voy a pegar un prompt que quiero mejorar. Necesito que lo optimices aplicando buenas prácticas de prompt engineering para hacerlo claro, preciso y efectivo. El prompt optimizado solo se entrega DESPUÉS de que yo responda tus preguntas.
-</div>
-<div class="mb-4">
-  <strong class="text-neuro-green">## Instrucciones</strong>
-  <div class="mt-2 space-y-4">
-    <div>
-      <div class="font-bold text-white mb-1">1) Analizá el prompt original y detectá:</div>
-      <div class="pl-4 border-l border-gray-700 text-gray-400 text-xs">
-        - Ambigüedades<br>
-        - Falta de contexto<br>
-        - Contradicciones<br>
-        - Redundancias<br>
-        - Problemas de formato
-      </div>
-    </div>
-    <div>
-      <div class="font-bold text-white mb-1">2) Formula preguntas necesarias al usuario antes de optimizar.</div>
-    </div>
-    <div>
-      <div class="font-bold text-white mb-1">3) Regla de Oro de Numeración (OBLIGATORIA si hacés preguntas):</div>
-      <div class="pl-4 border-l border-gray-700 text-gray-400 text-xs space-y-1">
-        <div>- Las preguntas NO llevan número.</div>
-        <div>- Las opciones SÍ llevan números consecutivos y únicos (1, 2, 3, 4, 5... N).</div>
-        <div>- La numeración NO se reinicia entre preguntas.</div>
-        <div>- Siempre incluí una opción final: “Otro / aclarar”.</div>
-        <div>- Agregá esta nota al final de las opciones: "Respondé con el número de la opción elegida. Si seleccionás 'Otro / aclarar', escribí tu aclaración en texto libre."</div>
-      </div>
-    </div>
-    <div>
-      <div class="font-bold text-white mb-1">4) Entregables obligatorios (en este orden y cuando yo responda):</div>
-      <div class="pl-4 border-l border-gray-700 text-gray-400 text-xs">
-        A) Mejoras aplicadas (máximo 5 puntos, sin teoría).<br>
-        B) Prompt optimizado final listo para usar, con esta estructura:<br>
-        &nbsp;&nbsp;- Rol<br>
-        &nbsp;&nbsp;- Contexto (si aplica)<br>
-        &nbsp;&nbsp;- Instrucciones
-      </div>
-    </div>
-    <div>
-      <div class="font-bold text-white mb-1">5) Formato obligatorio de salida:</div>
-      <div class="pl-4 border-l border-gray-700 text-gray-400 text-xs space-y-1">
-        <div>- El entregable B (Prompt optimizado final) debe entregarse dentro de un bloque de código en Markdown, para copiar y pegar tal cual, usando triple backticks.</div>
-        <div>- No escribas el prompt optimizado fuera del bloque de código.</div>
-        <div>- Usá lenguaje claro, directo y consistente.</div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="mt-6 pt-4 border-t border-white/5">
-  <strong class="text-neuro-green">## Prompt original</strong><br>
-  <span class="text-gray-500">[PEGAR AQUÍ EL PROMPT A OPTIMIZAR]</span>
-</div>
-                </div>
-              </div>
-              <div class="mt-8 flex justify-end">
-                <button onclick="copyToClipboard('prompt-content-2', this)" 
-                        class="btn-cyber group/btn flex items-center justify-center gap-3 bg-transparent border border-neuro-blue text-neuro-blue-light hover:bg-neuro-blue hover:text-white font-orbitron font-bold py-3 px-8 rounded-xl transition-all duration-300 shadow-[0_0_15px_rgba(33,0,229,0.1)] hover:shadow-[0_0_30px_rgba(33,0,229,0.5)] w-full sm:w-auto">
-                  <i data-lucide="copy" class="w-4 h-4 group-hover/btn:scale-110 transition-transform"></i>
-                  <span>COPIAR</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- EJEMPLO -->
+        <!-- EJEMPLO PRÁCTICO (CONTENIDO MILITAR/EDUCATIVO) -->
         <article class="glass-panel rounded-3xl p-1 relative group">
           <div class="absolute -inset-0.5 bg-gradient-to-br from-gray-700 to-black opacity-20 group-hover:opacity-40 rounded-3xl blur transition duration-500"></div>
           <div class="relative bg-neuro-dark/95 h-full rounded-[20px] p-6 md:p-8 overflow-hidden">
@@ -512,38 +429,33 @@
                 <h3 class="text-xl font-orbitron font-bold text-white tracking-wide">Ejemplo Práctico R.C.I.</h3>
               </div>
               <p class="text-sm text-gray-300 mb-6 italic border-l-2 border-white/20 pl-4">
-                Así es como se aplica la estructura en un caso real de turismo.
+                Aplicación de la fórmula en el ámbito estratégico y educativo.
               </p>
               <div class="bg-black/60 rounded-xl border border-white/5 p-6 font-mono text-sm text-gray-300 leading-relaxed">
                 <div id="prompt-content-example">
 <div class="mb-4">
   <strong class="text-neuro-green">**R (ROL):**</strong><br>
-  Actuá como un experto en organización de viajes turísticos y optimización de costos, con experiencia en planificación de itinerarios y búsqueda de vuelos económicos.
+  Eres un docente experto en Estrategia y Operaciones Conjuntas, especializado en la formación de oficiales de estado mayor y en metodologías de aprendizaje activo. Debes comportarte como un planificador académico riguroso, con criterio pedagógico y enfoque estratégico-militar.
 </div>
 <div class="mb-4">
   <strong class="text-neuro-green">**C (CONTEXTO):**</strong><br>
-  <div class="mt-2 grid grid-cols-1 md:grid-cols-2 gap-2 text-xs text-gray-400">
-    <div class="bg-white/5 p-2 rounded">Origen: San Rafael, Mendoza</div>
-    <div class="bg-white/5 p-2 rounded">Destino: Brasil</div>
-    <div class="bg-white/5 p-2 rounded">Duración: 7 días</div>
-    <div class="bg-white/5 p-2 rounded">Transporte: Avión</div>
-    <div class="bg-white/5 p-2 rounded col-span-1 md:col-span-2">Prioridad: Economía y Vuelos Baratos</div>
-  </div>
+  La clase se dictará en la Escuela Superior de Guerra Conjunta a Oficiales Superiores y alumnos de posgrado organizados en células de trabajo conjunto. El objetivo es analizar una crisis geopolítica actual utilizando doctrina conjunta, inteligencia de fuentes abiertas y herramientas digitales de simulación. Se requiere una planificación que promueva toma de decisiones, pensamiento crítico y trabajo colaborativo.
 </div>
 <div>
   <strong class="text-neuro-green">**I (INSTRUCCIONES):**</strong>
   <div class="mt-2 space-y-2">
-    <div>Indicá cuál es el mejor mes para viajar (febrero o marzo) teniendo en cuenta precios y conveniencia general.</div>
-    <div>Sugerí estrategias para encontrar vuelos más económicos (fechas flexibles, escalas, horarios, anticipación, etc.).</div>
-    <div>Organizá una agenda de viaje día por día, acorde a un viaje de turismo y descanso.</div>
-    <div class="mt-4 p-3 bg-neuro-green/5 border-l-2 border-neuro-green rounded-r-lg">
-      <div class="text-neuro-green font-bold text-xs mb-1 uppercase tracking-wide">Incluí en la respuesta:</div>
-      <div class="pl-2">
-        <div>• Resumen general</div>
-        <div>• Actividades diarias</div>
-        <div>• Tips de ahorro</div>
-      </div>
+    <div>Diseña un plan de clase de 90 minutos sobre [tema]. Integra metodologías activas como Aprendizaje Basado en Problemas o simulaciones de toma de decisiones.</div>
+    <div>Presenta la planificación con:
+      <ul class="pl-4 mt-1 border-l border-gray-600 text-xs text-gray-400">
+        <li>- objetivos de aprendizaje</li>
+        <li>- apertura de la clase</li>
+        <li>- desarrollo táctico</li>
+        <li>- cierre y debriefing</li>
+        <li>- recursos didácticos</li>
+        <li>- evaluación formativa</li>
+      </ul>
     </div>
+    <div>Utiliza tono académico, técnico y estratégico, propio de la Escuela Superior de Guerra.</div>
   </div>
 </div>
                 </div>
@@ -586,19 +498,13 @@
         <!-- ENCABEZADO DE BLOQUE CON MINI NAV -->
         <div class="text-center py-8">
             <h2 class="text-3xl font-orbitron font-bold text-white mb-4">GUÍA DE PROMPTS <span class="text-neuro-green">NOTEBOOK LM</span></h2>
-            <p class="text-gray-300 text-sm max-w-xl mx-auto mb-6">Aplicación práctica de la fórmula R.C.I. para estudiantes y profesionales.</p>
+            <p class="text-gray-300 text-sm max-w-xl mx-auto mb-6">Aplicación práctica de la fórmula R.C.I. para el ámbito académico.</p>      
             
-            <!-- MINI NAV (ANCHORS) -->
-            <div class="flex flex-wrap justify-center gap-3">
-                <a href="#section-legal" class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] text-gray-300 hover:text-white hover:bg-white/10 transition-colors uppercase font-orbitron">Legal</a>
-                <a href="#section-emprendedores" class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] text-gray-300 hover:text-white hover:bg-white/10 transition-colors uppercase font-orbitron">Emprendedores</a>
-                <a href="#section-audiovisual" class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] text-gray-300 hover:text-white hover:bg-white/10 transition-colors uppercase font-orbitron">Audiovisual</a>
-            </div>
         </div>
 
         <div id="section-legal" class="scroll-mt-32"></div>
 
-        <!-- 1. IDENTIFICACIÓN DE CONTRADICCIONES (LEGAL) -->
+        <!-- 1. INVESTIGACIÓN ACADÉMICA -->
         <article class="glass-panel rounded-3xl p-1 relative group">
           <!-- Fondo Azul Sutil -->
           <div class="absolute -inset-0.5 bg-gradient-to-r from-neuro-blue to-neuro-dark opacity-20 group-hover:opacity-40 rounded-3xl blur transition duration-500"></div>
@@ -606,34 +512,52 @@
             <div class="relative z-10">
               <div class="flex items-center gap-3 mb-4">
                 <div class="bg-neuro-blue/10 p-2 rounded-lg border border-neuro-blue/30">
-                    <i data-lucide="scale" class="text-neuro-blue-light w-5 h-5"></i>
+                    <i data-lucide="book-open" class="text-neuro-blue-light w-5 h-5"></i>
                 </div>
-                <h3 class="text-xl font-orbitron font-bold text-white tracking-wide">Identificación de Contradicciones</h3>
+                <h3 class="text-xl font-orbitron font-bold text-white tracking-wide">Investigación Académica</h3>
               </div>
-              <p class="text-sm text-gray-300 mb-6 font-light border-l-2 border-neuro-blue/30 pl-4">
-                Para auditores legales meticulosos. Detecta inconsistencias en testimonios y documentos.
-              </p>
+              
+              <div class="mb-6 space-y-4">
+                  <p class="text-sm text-gray-300 font-light border-l-2 border-neuro-blue/30 pl-4">
+                    <strong class="text-neuro-blue-light">Qué hace este prompt:</strong> Este prompt convierte la IA en un asistente de investigación académica. Sirve para resumir artículos, comparar autores y organizar ideas de textos académicos con formato formal.
+                  </p>
+                  
+                  <div class="bg-white/5 border border-white/10 rounded-xl p-4">
+                      <strong class="text-white text-sm block mb-2 font-orbitron tracking-wide">Cómo usarlo:</strong>
+                      <ol class="list-decimal pl-5 space-y-1 text-xs text-gray-400">
+                          <li>Pegá el prompt completo en una conversación nueva con la IA.</li>
+                          <li>Después cargá un artículo o texto académico.</li>
+                          <li>Pedile tareas concretas: resumir, comparar, sintetizar, extraer ideas clave.</li>
+                      </ol>
+                  </div>
+
+                  <div class="flex items-center gap-2 bg-neuro-green/10 border border-neuro-green/30 rounded-lg p-3 text-xs text-neuro-green">
+                      <i data-lucide="alert-circle" class="w-5 h-5 flex-shrink-0"></i>
+                      <p><strong>Importante:</strong> la IA es apoyo para estudiar. No reemplaza la lectura ni el criterio del docente.</p>
+                  </div>
+              </div>
+
               <div class="bg-black/80 rounded-xl border border-white/5 p-6 font-mono text-sm text-gray-300 leading-relaxed shadow-inner">
                 <div id="prompt-nb-1">
-<div class="mb-4 text-white"><strong class="text-neuro-blue-light">**R (ROL):**</strong> Actúa como un Auditor Legal meticuloso.</div>
-<div class="mb-4 text-white"><strong class="text-neuro-blue-light">**C (CONTEXTO):**</strong> Analiza la información contenida exclusivamente en los documentos cargados.</div>
-<div class="mb-4">
-    <div class="text-white mb-2"><strong class="text-neuro-blue-light">**I (INSTRUCCIONES):**</strong> Identifica y lista lo siguiente:</div>
-    <ul class="list-none space-y-2 pl-4 border-l border-gray-700 text-gray-400 text-xs">
-        <li>- CONTRADICCIONES entre declaraciones de la misma parte.</li>
-        <li>- INCONSISTENCIAS en fechas, montos o hechos narrados.</li>
-        <li>- DISCREPANCIAS entre testimonios y documentación.</li>
-        <li>- OMISIONES significativas en algún relato.</li>
-    </ul>
-</div>
-<div class="mt-4">
-    <div class="text-white mb-2">Para cada hallazgo, genera una lista con:</div>
-    <ul class="list-none space-y-1 pl-4 border-l border-gray-700 text-gray-400 text-xs">
-        <li>1. Qué se contradice específicamente.</li>
-        <li>2. Dónde aparece cada versión (Indica la cita de la fuente).</li>
-        <li>3. Relevancia legal potencial de este hallazgo.</li>
-    </ul>
-</div>
+<div class="mb-4">Ahora operas como un asistente de investigación académica especializado en lectura profunda, síntesis estructurada y precisión factual. Tu función es actuar como colaborador académico. Debes resumir textos académicos, comparar argumentos, extraer ideas clave y escribir notas formales con tono académico.</div>
+
+<div class="mb-2"><strong class="text-neuro-blue-light">Reglas obligatorias:</strong></div>
+<ul class="list-none space-y-1 pl-4 border-l border-gray-700 text-gray-400 text-xs mb-4">
+    <li>- Nunca inventes fuentes o hechos. Si algo no está en el texto, responde: “no disponible”.</li>
+    <li>- Incluye autor, título y año al citar.</li>
+    <li>- Usa inglés académico formal.</li>
+    <li>- Formato de cita APA por defecto.</li>
+</ul>
+
+<div class="mb-2"><strong class="text-neuro-blue-light">Estructura siempre la respuesta con estos encabezados:</strong></div>
+<ul class="list-none space-y-1 pl-4 border-l border-gray-700 text-gray-400 text-xs mb-4">
+    <li>- Abstract</li>
+    <li>- Summary by Source</li>
+    <li>- Comparative Analysis</li>
+    <li>- Synthesis & Takeaways</li>
+</ul>
+
+<div class="mt-4 pt-4 border-t border-white/10 text-xs">Termina con bibliografía completa. Trata todos los textos que reciba como material académico. No eres un chatbot. Eres un coautor académico riguroso.</div>
                 </div>
               </div>
               <div class="mt-6 flex justify-end">
@@ -690,7 +614,7 @@
           </div>
         </article>
 
-        <!-- 3. BORRADOR DE ESCRITO (ABOGADOS) -->
+        <!-- 3. EL ANALISTA DE LÍNEAS INVISIBLES -->
         <article class="glass-panel rounded-3xl p-1 relative group">
           <!-- Fondo Azul Claro Sutil -->
           <div class="absolute -inset-0.5 bg-gradient-to-r from-neuro-blue-light to-neuro-dark opacity-10 group-hover:opacity-30 rounded-3xl blur transition duration-500"></div>
@@ -698,38 +622,38 @@
             <div class="relative z-10">
               <div class="flex items-center gap-3 mb-4">
                 <div class="bg-neuro-blue-light/10 p-2 rounded-lg border border-neuro-blue-light/30">
-                    <i data-lucide="gavel" class="text-neuro-blue-light w-5 h-5"></i>
+                    <i data-lucide="eye" class="text-neuro-blue-light w-5 h-5"></i>
                 </div>
-                <h3 class="text-xl font-orbitron font-bold text-white tracking-wide">Borrador de Escrito</h3>
+                <h3 class="text-xl font-orbitron font-bold text-white tracking-wide">El Analista de "Líneas Invisibles"</h3>
               </div>
               
               <!-- Nota de Valor en Glassmorphism Gris -->
               <div class="glass-panel border-white/10 rounded-lg p-3 mb-6 flex gap-3 items-start bg-white/5">
                   <i data-lucide="lightbulb" class="text-neuro-green w-5 h-5 flex-shrink-0 mt-0.5"></i>
-                  <p class="text-xs text-gray-300/90">Nota de Valor: Este recurso no reemplaza al abogado, pero proporciona un borrador sólido listo para refinar, permitiendo ahorrar entre 2 y 3 horas de trabajo inicial.</p>
+                  <p class="text-xs text-gray-300/90"><strong class="text-white">¿Para qué sirve?</strong> Para ver lo que el 99% de la gente ignora. Detecta sesgos, intenciones no declaradas, falacias lógicas y el verdadero trasfondo de cualquier discurso, contrato o artículo.</p>
               </div>
 
               <div class="bg-black/80 rounded-xl border border-white/5 p-6 font-mono text-sm text-gray-300 leading-relaxed shadow-inner">
                 <div id="prompt-nb-3">
-<div class="mb-4 text-white"><strong class="text-neuro-blue-light">**R (ROL):**</strong> Actúa como un Abogado Litigante especialista en Derecho Procesal.</div>
-<div class="mb-4 text-white"><strong class="text-neuro-blue-light">**C (CONTEXTO):**</strong> Basándote estrictamente en los hechos y pruebas de los documentos del expediente cargado.</div>
+<div class="mb-4 text-white"><strong class="text-neuro-blue-light">**R (ROL):**</strong> Eres un Analista Forense de Información y Especialista en Inteligencia. Tu habilidad principal es el pensamiento crítico radical y la detección de patrones de manipulación o sesgos cognitivos.</div>
+<div class="mb-4 text-white"><strong class="text-neuro-blue-light">**C (CONTEXTO/OBJETIVO):**</strong> Deconstruir el texto proporcionado para revelar suposiciones, sesgos y mensajes implícitos que solo un experto de élite notaría.</div>
 <div class="mb-4">
-    <div class="text-white mb-2"><strong class="text-neuro-blue-light">**I (INSTRUCCIONES):**</strong> Redacta un borrador profesional de [memorial de agravios/contestación de demanda/alegatos] para [especificar parte] basándote en los documentos del expediente.</div>
-</div>
-<div class="mb-4">
-    <div class="text-white mb-2">Sigue esta ESTRUCTURA:</div>
-    <ul class="list-none space-y-1 pl-4 border-l border-gray-700 text-gray-400 text-xs">
-        <li>I. Encabezado (partes, expediente, objeto).</li>
-        <li>II. Antecedentes del caso (Narrativa cronológica basada en fuentes).</li>
-        <li>III. Hechos acreditados (Con citas a las fuentes).</li>
-        <li>IV. Derecho aplicable sugerido.</li>
-        <li>V. Agravios / Defensas.</li>
-        <li>VI. Petitorio.</li>
+    <div class="text-white mb-2"><strong class="text-neuro-blue-light">**I (INSTRUCCIONES DE DECONSTRUCCIÓN):**</strong></div>
+    <ul class="list-none space-y-2 pl-4 border-l border-gray-700 text-gray-400 text-xs">
+        <li><strong>1. Cuestionamiento de Premisas:</strong> Identifica qué está asumiendo el autor como "verdad absoluta" sin presentar pruebas.</li>
+        <li><strong>2. Identificación de Sesgos:</strong> Detecta sesgos de confirmación, lenguaje cargado emocionalmente o selección interesada de datos (cherry-picking).</li>
+        <li><strong>3. El Elefante en la Habitación:</strong> Señala qué información crucial se ha omitido deliberadamente para favorecer una narrativa.</li>
     </ul>
 </div>
-<div class="mt-2 text-xs text-gray-400">
-    <strong>Estilo:</strong> Formal, técnico-jurídico argentino.<br>
-    <strong>Extensión:</strong> Detallada (aprox 1000 palabras).
+<div class="mb-4">
+    <div class="text-white mb-2"><strong class="text-neuro-blue-light">**ESTRUCTURA DE SALIDA OBLIGATORIA:**</strong></div>
+    <ul class="list-none space-y-1 pl-4 border-l border-gray-700 text-gray-400 text-xs">
+        <li>- <strong>Suposiciones Ocultas:</strong> Aquello que el autor da por sentado pero que es debatible.</li>
+        <li>- <strong>Sesgos Detectados:</strong> Lista de prejuicios o inclinaciones encontradas en el texto.</li>
+        <li>- <strong>Lo "No Dicho":</strong> Las omisiones clave y percepciones que se intentan ocultar.</li>
+        <li>- <strong>Perspectiva de Experto:</strong> ¿Qué vería un PhD o un CEO de la industria en este texto que un lector común pasaría por alto?</li>
+        <li>- <strong>Veredicto de Neutralidad:</strong> Puntuación de 1 a 10 (1 = Manipulación pura / 10 = Objetividad total).</li>
+    </ul>
 </div>
                 </div>
               </div>
@@ -807,513 +731,145 @@
             </article>
         </div>
 
-        <div id="section-emprendedores" class="scroll-mt-32"></div>
-
-        <!-- 6. EMPRENDEDORES (RIESGOS Y COMPARACIÓN) -->
-        <article class="glass-panel rounded-3xl p-1 relative group">
-          <!-- Mix Verde y Azul -->
-          <div class="absolute -inset-0.5 bg-gradient-to-r from-neuro-green via-neuro-blue to-black opacity-10 group-hover:opacity-30 rounded-3xl blur transition duration-500"></div>
-          <div class="relative bg-neuro-dark/90 h-full rounded-[20px] p-6 md:p-8 overflow-hidden">
-            <div class="relative z-10">
-              <div class="flex items-center gap-3 mb-4">
-                <div class="bg-white/10 p-2 rounded-lg border border-white/20">
-                    <i data-lucide="briefcase" class="text-white w-5 h-5"></i>
-                </div>
-                <h3 class="text-xl font-orbitron font-bold text-white tracking-wide">Prompts para Emprendedores</h3>
-              </div>
-
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <!-- OPCIÓN A -->
-                  <div>
-                      <h4 class="text-sm font-bold text-neuro-green mb-3 uppercase tracking-wider border-b border-neuro-green/30 pb-2">Opción A: Análisis de Riesgo</h4>
-                      <div class="bg-black/80 rounded-xl border border-white/5 p-4 font-mono text-xs text-gray-300 leading-relaxed shadow-inner h-64 overflow-y-auto">
-                        <div id="prompt-nb-6a">
-<div class="mb-2"><strong class="text-neuro-green">**R (ROL):**</strong> Actúa como Consultor de Negocios especializado en gestión de riesgos.</div>
-<div class="mb-2"><strong class="text-neuro-green">**C (CONTEXTO):**</strong> Analiza este documento/contrato.</div>
-<div class="mb-2"><strong class="text-neuro-green">**I (INSTRUCCIONES):**</strong> Genera un reporte de "Semáforo" con lenguaje simple:</div>
-<ul class="pl-2 border-l border-gray-700 mt-2 space-y-2 text-gray-400">
-    <li>🔴 Rojo: Puntos críticos que requieren revisión legal inmediata o generan dudas.</li>
-    <li>🟡 Amarillo: Partes confusas o incompletas que se deben aclarar.</li>
-    <li>🟢 Verde: Puntos claros y beneficiosos.</li>
-</ul>
-                        </div>
-                      </div>
-                      <div class="mt-3 text-right">
-                          <button onclick="copyToClipboard('prompt-nb-6a', this)" class="text-[10px] font-bold text-gray-400 hover:text-neuro-green transition-colors">COPIAR OPCIÓN A</button>
-                      </div>
-                  </div>
-
-                  <!-- OPCIÓN B -->
-                  <div>
-                      <h4 class="text-sm font-bold text-neuro-blue-light mb-3 uppercase tracking-wider border-b border-neuro-blue-light/30 pb-2">Opción B: Comparativa</h4>
-                      <div class="bg-black/80 rounded-xl border border-white/5 p-4 font-mono text-xs text-gray-300 leading-relaxed shadow-inner h-64 overflow-y-auto">
-                        <div id="prompt-nb-6b">
-<div class="mb-2"><strong class="text-neuro-blue-light">**R (ROL):**</strong> Actúa como Gerente de Compras.</div>
-<div class="mb-2"><strong class="text-neuro-blue-light">**C (CONTEXTO):**</strong> Compara los documentos cargados (ej. Presupuesto A y B).</div>
-<div class="mb-2"><strong class="text-neuro-blue-light">**I (INSTRUCCIONES):**</strong> Crea una tabla comparativa que muestre:</div>
-<ul class="pl-2 border-l border-gray-700 mt-2 space-y-2 text-gray-400">
-    <li>- Similitudes clave.</li>
-    <li>- Diferencias (precios, plazos, condiciones).</li>
-    <li>- Conclusión: ¿Qué diferencias impactan más en la rentabilidad de mi emprendimiento?</li>
-</ul>
-                        </div>
-                      </div>
-                      <div class="mt-3 text-right">
-                          <button onclick="copyToClipboard('prompt-nb-6b', this)" class="text-[10px] font-bold text-gray-400 hover:text-neuro-blue-light transition-colors">COPIAR OPCIÓN B</button>
-                      </div>
-                  </div>
-              </div>
-
-            </div>
-          </div>
-        </article>
-
-        <!-- === SEPARADOR VISUAL Y NUEVA SECCIÓN === -->
-        <div id="section-audiovisual" class="scroll-mt-32 pt-12 border-t border-white/5 mt-16 relative">
-            <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-neuro-blue/50 to-transparent"></div>
-            
-            <div class="text-center mb-10">
-                <h2 class="text-2xl md:text-3xl font-orbitron font-bold text-white mt-4">
-                    GUÍA AUDIOVISUAL <span class="text-transparent bg-clip-text bg-gradient-to-r from-neuro-blue-light to-neuro-blue">AI ART</span>
-                </h2>
-                <p class="text-gray-300 text-sm mt-2">Prompts de ingeniería inversa para generación de imágenes hiperrealistas.</p>
-            </div>
-
-            <!-- TARJETA: MARCA PERSONAL (ESTILO JSON) - CORREGIDO -->
-            <article class="glass-panel rounded-3xl p-1 relative group">
-                <div class="absolute -inset-0.5 bg-gradient-to-r from-neuro-blue via-neuro-green to-neuro-dark opacity-20 group-hover:opacity-50 rounded-3xl blur transition duration-500"></div>
-                
-                <div class="relative bg-neuro-dark/95 h-full rounded-[20px] p-6 md:p-8 overflow-hidden">
-                    <div class="relative z-10">
-                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
-                            <div class="flex items-center gap-4">
-                                <div class="bg-neuro-blue/10 p-3 rounded-xl border border-neuro-blue/30 shadow-[0_0_15px_rgba(33,0,229,0.15)]">
-                                    <i data-lucide="aperture" class="text-neuro-blue-light w-6 h-6"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-orbitron font-bold text-white tracking-wide">Marca Personal Premium</h3>
-                                    <div class="flex items-center gap-2 mt-1">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-neuro-green animate-pulse"></span>
-                                        <p class="text-[10px] text-gray-400 uppercase tracking-wider font-bold">Formato JSON • Nano Banana Style</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <p class="text-sm text-gray-300 mb-6 font-light border-l-2 border-neuro-blue/50 pl-4">
-                            Prompt estructurado para mantener la identidad facial exacta mientras se mejora la calidad estética a nivel editorial.
-                        </p>
-
-                        <!-- ESTILO CORREGIDO: CONTENEDOR SIMPLE CON ESTRUCTURA R.C.I. -->
-                        <div class="bg-black/80 rounded-xl border border-white/5 p-6 font-mono text-sm text-gray-300 leading-relaxed shadow-inner">
-                            <div id="prompt-visual-1">
-<div class="mb-4">
-  <strong class="text-neuro-green">**R (ROL):**</strong><br>
-  Actuá como fotógrafo publicitario de élite especializado en marca personal (headshots premium, estética editorial y corporativa). Tu objetivo es crear imágenes hiperrealistas y vendibles para Instagram.
-</div>
-
-<div class="mb-4">
-  <strong class="text-neuro-green">**C (CONTEXTO):**</strong><br>
-  Crear una foto de marca personal premium para el perfil de Instagram usando como referencia la foto subida.
-  
-  <div class="mt-2">
-    <strong class="text-neuro-blue-light text-xs uppercase">Referencia Obligatoria:</strong><br>
-    Analizá la foto subida y usala como referencia principal para la persona (misma identidad).
-  </div>
-
-  <div class="mt-2">
-    <strong class="text-neuro-blue-light text-xs uppercase">Restricciones Identidad:</strong>
-    <ul class="pl-2 border-l border-gray-700 mt-1 space-y-1 text-xs text-gray-400">
-      <li>- NO modificar identidad: mantener el rostro, rasgos faciales, edad aproximada y tono de piel del sujeto de la foto subida.</li>
-      <li>- NO cambiar género ni expresión base (solo mejorar naturalidad si hace falta).</li>
-      <li>- NO deformar manos, ojos ni dientes.</li>
-      <li>- NO filtros exagerados ni efecto plástico.</li>
-      <li>- Si tiene tatuajes: conservarlos tal cual. NO inventar tatuajes.</li>
-    </ul>
-  </div>
-
-  <div class="mt-2">
-    <strong class="text-neuro-blue-light text-xs uppercase">Negativos (Evitar):</strong>
-    <ul class="pl-2 border-l border-gray-700 mt-1 space-y-1 text-xs text-gray-400">
-      <li>- Evitar cara de muñeco / plástico / piel perfecta irreal.</li>
-      <li>- Evitar manos deformes o dedos extra.</li>
-      <li>- Evitar dientes raros o sonrisa forzada.</li>
-      <li>- Evitar distorsión de lente extrema.</li>
-      <li>- Evitar filtros tipo beauty agresivos.</li>
-    </ul>
-  </div>
-</div>
-
-<div>
-  <strong class="text-neuro-green">**I (INSTRUCCIONES):**</strong><br>
-  dame un promt en estilo json para nano banana en cuadro de código. <br>
-  `Entregar en un bloque de código json`
-</div>
-                            </div>
-                        </div>
-
-                        <div class="mt-6 flex justify-end">
-                            <button onclick="copyToClipboard('prompt-visual-1', this)" 
-                                    class="btn-cyber group/btn flex items-center justify-center gap-3 bg-neuro-green text-black font-orbitron font-bold py-3 px-8 rounded-xl hover:bg-white transition-all duration-300 shadow-[0_0_20px_rgba(154,255,95,0.3)] hover:shadow-[0_0_30px_rgba(154,255,95,0.6)] w-full sm:w-auto">
-                                <i data-lucide="copy" class="w-4 h-4 group-hover/btn:scale-110 transition-transform"></i>
-                                <span>COPIAR PROMPT</span>
-                            </button>
-                        </div>
-
-                    </div>
-                </div>
-            </article>
-
-            <!-- 7. ESTRATEGIA DE CAMPAÑA 360 -->
-            <article class="glass-panel rounded-3xl p-1 relative group mt-8">
-                <div class="absolute -inset-0.5 bg-gradient-to-r from-neuro-blue to-white opacity-10 group-hover:opacity-30 rounded-3xl blur transition duration-500"></div>
-                <div class="relative bg-neuro-dark/90 h-full rounded-[20px] p-6 md:p-8 overflow-hidden">
-                    <div class="relative z-10">
-                        <div class="flex items-center gap-3 mb-6">
-                            <div class="bg-neuro-blue/10 p-2 rounded-lg border border-neuro-blue/30">
-                                <i data-lucide="rocket" class="text-white w-5 h-5"></i>
-                            </div>
-                            <h3 class="text-xl font-orbitron font-bold text-white tracking-wide">Estrategia de Campaña 360°</h3>
-                        </div>
-                        <p class="text-sm text-gray-300 mb-6 font-light border-l-2 border-white/30 pl-4">
-                             Automatiza tu estrategia digital: desde la identidad de marca hasta el plan de contenidos semanal.
-                        </p>
-                        <div class="bg-black/80 rounded-xl border border-white/5 p-6 font-mono text-sm text-gray-300 leading-relaxed shadow-inner max-h-[500px] overflow-y-auto custom-scrollbar">
-                            <div id="prompt-nb-7">
-<div class="mb-4">Actúa como mi Director de Estrategia de Marca y Marketing Digital (Senior). Tu misión es facilitarme la vida: yo te doy los datos básicos y tú haces todo el análisis, la investigación y la estrategia.</div>
-
-<div class="mb-2"><strong class="text-neuro-blue-light">**TU PROTOCOLO DE ACTUACIÓN:**</strong></div>
-
-<div class="mb-4">
-  <strong class="text-neuro-green">## PASO 1: LA ENTREVISTA GUIADA</strong><br>
-  No generes ninguna estrategia todavía. Tu primera acción es saludarme y presentarme el siguiente MENÚ DE SELECCIÓN para que yo configure la campaña. Copia y pega esta lista exactamente para que yo pueda responder:
-</div>
-
-<div class="mb-4 pl-4 border-l border-gray-700">
-  <div class="mb-2 text-white font-bold">---</div>
-  <div class="mb-2"><strong class="text-white">**POR FAVOR, RESPONDE A ESTOS 4 PUNTOS:**</strong></div>
-  
-  <div class="mb-2">
-    <strong class="text-neuro-green">**A. TU ENLACE O DESCRIPCIÓN (Fundamental para mi investigación):**</strong><br>
-    * Pega aquí tu Instagram, Web, TikTok , sube un documento o describe tu negocio si no tienes links.
-  </div>
-
-  <div class="mb-2">
-    <strong class="text-neuro-green">**B. ELIGE TU OBJETIVO (Responde con el número):**</strong><br>
-    1. Lanzar un producto<br>
-    2. Lanzar un curso<br>
-    3. Lanzar un servicio<br>
-    4. Aumentar ventas<br>
-    5. Posicionamiento / Seguidores<br>
-    6. Otro (aclarar)
-  </div>
-
-  <div class="mb-2">
-    <strong class="text-neuro-green">**C. ELIGE TU CANAL DE VENTA (Donde se cierra el dinero):**</strong><br>
-    7. WhatsApp<br>
-    8. Instagram DM<br>
-    9. Web / Landing Page<br>
-    10. Tienda Online<br>
-    11. Otro (Aclarar)
-  </div>
-
-  <div class="mb-2">
-    <strong class="text-neuro-green">**D. TU DISPONIBILIDAD DE TIEMPO (Para ajustar el plan):**</strong><br>
-    12. Poca (1-2 horas/semana)<br>
-    13. Media (3-5 horas/semana)<br>
-    14. Alta (Tengo equipo o mucho tiempo)
-  </div>
-  <div class="mb-2 text-white font-bold">---</div>
-</div>
-
-<div class="mb-4 text-xs text-gray-500 italic">> [DETENTE AQUÍ Y ESPERA MI RESPUESTA CON LOS DATOS]</div>
-
-<div class="mb-4">
-  <strong class="text-neuro-green">## PASO 2: EL ANÁLISIS Y LA ESTRATEGIA</strong><br>
-  Una vez recibas mis respuestas y mi enlace:<br>
-  1. <strong class="text-white">**INVESTIGA:**</strong> Entra al link (o analiza la descripción) y deduce tú mismo mi identidad de marca, mi cliente ideal y mis fortalezas. No me preguntes, dedúcelo.<br>
-  2. <strong class="text-white">**EJECUTA:**</strong> Genera el siguiente informe estratégico basándote en tu investigación:
-</div>
-
-<div class="mb-4">
-  <div class="mb-2 text-white font-bold">ENTREGABLE FINAL (Usa este formato):</div>
-  
-  <div class="mb-3">
-    <strong class="text-neuro-blue-light">### 1) 📸 FOTO RÁPIDA DE MARCA (Análisis de identidad)</strong><br>
-    * <strong class="text-white">**Propuesta de valor detectada:**</strong> (Redáctala en 1 frase potente).<br>
-    * <strong class="text-white">**Estilo Visual y Colores:**</strong> (Si mi marca tiene colores, úsalos. Si no, SUGIERE una paleta de 3 colores y un estilo de fotos/video acorde a mi nicho).<br>
-    * <strong class="text-white">**Voz de Marca:**</strong> (Define cómo debo hablar: serio, divertido, inspirador, etc.).
-  </div>
-
-  <div>
-    <strong class="text-neuro-blue-light">### 2) 🚀 ESTRATEGIA DE VENTA EN 1 PÁGINA (Modelo 5P Simplificado)</strong><br>
-    * <strong class="text-white">**PRODUCTO:**</strong> Ángulo ganador + Promesa recomendada + 1 Bonus sugerido para aumentar valor.<br>
-    * <strong class="text-white">**PRECIO:**</strong> Recomendación de estructura de precio (o cómo presentarlo).<br>
-    * <strong class="text-white">**PLAZA (El flujo):**</strong> Ruta exacta. Ej: Reel (gancho) → DM (automatización) → WhatsApp (cierre).<br>
-    * <strong class="text-white">**PROMOCIÓN (Plan de Acción):**</strong> Plan de contenidos exacto para 7 días (qué subir cada día para lograr el objetivo que elegí).<br>
-    * <strong class="text-white">**PERSONAS (Psicología):**</strong> 5 Objeciones probables de mi cliente + 5 Respuestas cortas listas para copiar y pegar.
-  </div>
-</div>
-
-<div class="mt-4">Si has entendido tu rol, salúdame y preséntame el menú del PASO 1.</div>
-                            </div>
-                        </div>
-                        <div class="mt-6 flex justify-end">
-                            <button onclick="copyToClipboard('prompt-nb-7', this)" 
-                                    class="btn-cyber flex items-center justify-center gap-2 bg-neuro-blue text-white hover:bg-white hover:text-neuro-blue font-orbitron text-xs font-bold py-3 px-6 rounded-lg transition-all shadow-[0_0_15px_rgba(33,0,229,0.2)] w-full sm:w-auto">
-                              <i data-lucide="copy" class="w-3 h-3"></i>
-                              <span>COPIAR ESTRATEGIA</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <!-- NUEVO: PROMPT DE EJECUCIÓN (DÍA 1) -->
-            <article class="glass-panel rounded-3xl p-1 relative group mt-8">
-                <div class="absolute -inset-0.5 bg-gradient-to-r from-neuro-blue-light to-neuro-blue opacity-10 group-hover:opacity-30 rounded-3xl blur transition duration-500"></div>
-                <div class="relative bg-neuro-dark/90 h-full rounded-[20px] p-6 md:p-8 overflow-hidden">
-                    <div class="relative z-10">
-                        <div class="flex items-center gap-3 mb-6">
-                            <div class="bg-neuro-blue/10 p-2 rounded-lg border border-neuro-blue/30">
-                                <i data-lucide="image-plus" class="text-neuro-blue-light w-5 h-5"></i>
-                            </div>
-                            <h3 class="text-xl font-orbitron font-bold text-white tracking-wide">Ejecución Día 1 (Venta Visual)</h3>
-                        </div>
-                        <p class="text-sm text-gray-300 mb-6 font-light border-l-2 border-neuro-blue/30 pl-4">
-                             Genera la imagen de venta perfecta usando la información de la estrategia anterior y una foto de referencia.
-                        </p>
-                        <div class="bg-black/80 rounded-xl border border-white/5 p-6 font-mono text-sm text-gray-300 leading-relaxed shadow-inner">
-                            <div id="prompt-visual-2">
-Con la información que tienes de mi , ejecuta el día número uno. voy a suvbir y una foto y proponme un prom para Nano Banana para crear una imagen que venda en formato JSON en cuadro de texto de código. <br>
-`Entregar en un bloque de código json`
-<br><br>
-<strong class="text-neuro-green">PROHIBIDO:</strong><br>
-- Cambiar colores, logos o etiquetas.<br>
-- Inventar o rediseñar marcas.<br>
-- Alterar textos impresos.<br>
-- Modificar rasgos físicos.<br>
-- Transformar el producto para hacerlo “más premium”.
-                            </div>
-                        </div>
-                        <div class="mt-6 flex justify-end">
-                            <button onclick="copyToClipboard('prompt-visual-2', this)" 
-                                    class="btn-cyber flex items-center justify-center gap-2 bg-neuro-blue/10 border border-neuro-blue text-neuro-blue-light hover:bg-neuro-blue hover:text-white font-orbitron text-xs font-bold py-3 px-6 rounded-lg transition-all w-full sm:w-auto">
-                              <i data-lucide="copy" class="w-3 h-3"></i>
-                              <span>COPIAR PROMPT</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <!-- NUEVO: ANIMACIÓN DE IMAGEN (GROK) -->
-            <article class="glass-panel rounded-3xl p-1 relative group mt-8">
-                <div class="absolute -inset-0.5 bg-gradient-to-r from-neuro-green to-white opacity-10 group-hover:opacity-30 rounded-3xl blur transition duration-500"></div>
-                <div class="relative bg-neuro-dark/90 h-full rounded-[20px] p-6 md:p-8 overflow-hidden">
-                    <div class="relative z-10">
-                        <div class="flex items-center gap-3 mb-6">
-                            <div class="bg-neuro-green/10 p-2 rounded-lg border border-neuro-green/30">
-                                <i data-lucide="film" class="text-neuro-green w-5 h-5"></i>
-                            </div>
-                            <h3 class="text-xl font-orbitron font-bold text-white tracking-wide">Animación de Imagen (Grok)</h3>
-                        </div>
-                        <p class="text-sm text-gray-300 mb-6 font-light border-l-2 border-neuro-green/30 pl-4">
-                             Transforma imágenes estáticas en clips de video manteniendo la fidelidad visual.
-                        </p>
-                        <div class="bg-black/80 rounded-xl border border-white/5 p-6 font-mono text-sm text-gray-300 leading-relaxed shadow-inner">
-                            <div id="prompt-visual-3">
-<div class="mb-4">
-  <strong class="text-neuro-green">**R (ROL):**</strong><br>
-  Actúa como director de animación y diseñador de prompts experto en Grok, especializado en transformar imágenes estáticas en clips cortos, claros y visualmente atractivos.
-</div>
-<div class="mb-4">
-  <strong class="text-neuro-green">**C (CONTEXTO):**</strong><br>
-  Observa la imagen de referencia. Quiero convertirla en una animación manteniendo el estilo visual, los personajes/objetos principales, la iluminación y el encuadre lo más fiel posible.
-  <br><br>
-  <span class="text-neuro-blue-light font-bold text-xs uppercase">Restricciones:</span><br>
-  No cambiar identidad del sujeto, no deformar caras, no agregar elementos que no estén en la imagen.
-</div>
-<div>
-  <strong class="text-neuro-green">**I (INSTRUCCIONES):**</strong><br>
-  Genera 1 prompt en cuadro de codigo listo para pegar en Grok.<br>
-  <span class="text-neuro-blue-light font-bold text-xs uppercase">Duración:</span> 4 a 6 segundos.
-</div>
-                            </div>
-                        </div>
-                        <div class="mt-6 flex justify-end">
-                            <button onclick="copyToClipboard('prompt-visual-3', this)" 
-                                    class="btn-cyber flex items-center justify-center gap-2 bg-neuro-green/10 border border-neuro-green text-neuro-green hover:bg-neuro-green hover:text-black font-orbitron text-xs font-bold py-3 px-6 rounded-lg transition-all w-full sm:w-auto">
-                              <i data-lucide="copy" class="w-3 h-3"></i>
-                              <span>COPIAR PROMPT</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-        </div>
-
     </div>
 
-    <!-- CONTENIDO BLOQUE 3: BRÚJULA DE DECISIONES -->
+    <!-- CONTENIDO BLOQUE 3: PRESENTACIONES CON GAMMA -->
     <div id="content-bloque3" class="hidden animate-fade-in-up space-y-12">
         
         <!-- ENCABEZADO -->
         <div class="text-center py-8">
-            <h2 class="text-3xl font-orbitron font-bold text-white mb-4">BRÚJULA DE <span class="text-neuro-green">DECISIONES</span></h2>
+            <h2 class="text-3xl font-orbitron font-bold text-white mb-4">PRESENTACIONES CON <span class="text-neuro-green">GAMMA APP</span></h2>
             <p class="text-gray-300 text-sm max-w-xl mx-auto mb-6">
-                Sistema de análisis económico y laboral para decidir con claridad en el corto plazo.
+                Creación de narrativas visuales y diseño ejecutivo con IA.
             </p>
         </div>
 
-        <!-- FASE 1: GENERADOR DE CONTEXTO (INTERACTIVO) -->
-        <section class="glass-panel rounded-3xl p-6 border border-white/5 relative overflow-hidden">
+        <!-- FORMULARIO INTERACTIVO (CONFIGURADOR) -->
+        <section class="glass-panel rounded-3xl p-6 border border-white/5 relative overflow-hidden mb-8">
              <div class="flex items-center gap-3 mb-6">
                 <div class="bg-neuro-green/10 p-2 rounded-lg border border-neuro-green/30">
                     <i data-lucide="sliders" class="text-neuro-green w-5 h-5"></i>
                 </div>
-                <h3 class="text-lg font-orbitron font-bold text-white">1. Generador de Contexto</h3>
+                <div>
+                    <h3 class="text-lg font-orbitron font-bold text-white">Configurador de Presentación</h3>
+                    <p class="text-[10px] text-gray-400">Completa aquí y los datos se autocompletarán en ambos prompts.</p>
+                </div>
              </div>
-             <p class="text-xs text-gray-400 mb-6">Selecciona una opción o escribe tu propia respuesta para generar el prompt automáticamente.</p>
              
-             <!-- FORMULARIO INTERACTIVO -->
-             <div class="space-y-6" id="context-generator-form">
-                 
-                 <!-- ACTIVIDAD -->
+             <div class="space-y-6">
+                 <!-- TEMA -->
                  <div class="bg-black/60 rounded-xl border border-white/5 p-4">
-                     <label class="text-neuro-green font-bold text-xs uppercase mb-2 block">Actividad o Fuente de Ingreso</label>
-                     <div class="flex gap-2 overflow-x-auto pb-2 mb-2 custom-scrollbar">
-                         <span class="chip-select px-3 py-1 rounded-full border border-gray-700 text-gray-400 hover:text-white" onclick="setInputValue('input-actividad', 'Clases particulares')">Clases particulares</span>
-                         <span class="chip-select px-3 py-1 rounded-full border border-gray-700 text-gray-400 hover:text-white" onclick="setInputValue('input-actividad', 'Consultoría independiente')">Consultoría</span>
-                         <span class="chip-select px-3 py-1 rounded-full border border-gray-700 text-gray-400 hover:text-white" onclick="setInputValue('input-actividad', 'Comercio minorista')">Comercio</span>
-                         <span class="chip-select px-3 py-1 rounded-full border border-gray-700 text-gray-400 hover:text-white" onclick="setInputValue('input-actividad', 'Trabajo administrativo')">Administrativo</span>
-                         <span class="chip-select px-3 py-1 rounded-full border border-gray-700 text-gray-400 hover:text-white" onclick="setInputValue('input-actividad', 'Emprendimiento gastronómico')">Gastronómico</span>
-                         <span class="chip-select px-3 py-1 rounded-full border border-gray-700 text-gray-400 hover:text-white" onclick="setInputValue('input-actividad', 'Jubilación activa')">Jubilación activa</span>
-                     </div>
-                     <input type="text" id="input-actividad" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-neuro-green/50 transition-colors" placeholder="O escribe aquí tu actividad..." oninput="updatePromptB3()">
-                     <p class="text-[10px] text-gray-500 mt-1 italic">Tip: Sé concreto. No pongas "mi trabajo" o "varias cosas".</p>
+                     <label class="text-neuro-green font-bold text-xs uppercase mb-2 block">Tema Principal de la Presentación</label>
+                     <input type="text" id="gamma-tema" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-neuro-green/50 transition-colors" placeholder="Ej: Estrategia de Marketing Q3..." oninput="updateGammaPrompts()">
                  </div>
 
-                 <!-- GRID: INGRESO - COSTOS - TIEMPO -->
+                 <!-- GRID 1: Audiencia, Objetivo, Formato -->
                  <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                     <!-- INGRESO -->
                      <div class="bg-black/60 rounded-xl border border-white/5 p-4">
-                         <label class="text-neuro-green font-bold text-xs uppercase mb-2 block">Ingreso Mensual ($)</label>
-                         <input type="number" id="input-ingreso" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-neuro-green/50 transition-colors" placeholder="0.00" oninput="updatePromptB3()">
-                         <p class="text-[10px] text-gray-500 mt-1 italic">Promedio real últimos 3 meses. No pongas ingreso ideal.</p>
+                         <label class="text-neuro-green font-bold text-xs uppercase mb-2 block">Audiencia</label>
+                         <div class="flex gap-2 overflow-x-auto pb-2 mb-2 custom-scrollbar">
+                             <span class="chip-select px-3 py-1 rounded-full border border-gray-700 text-gray-400 hover:text-white" onclick="setGammaValue('gamma-audiencia', 'Directivos/C-Level')">Directivos</span>
+                             <span class="chip-select px-3 py-1 rounded-full border border-gray-700 text-gray-400 hover:text-white" onclick="setGammaValue('gamma-audiencia', 'Alumnos universitarios')">Alumnos</span>
+                             <span class="chip-select px-3 py-1 rounded-full border border-gray-700 text-gray-400 hover:text-white" onclick="setGammaValue('gamma-audiencia', 'Clientes potenciales')">Clientes</span>
+                             <span class="chip-select px-3 py-1 rounded-full border border-gray-700 text-gray-400 hover:text-white" onclick="setGammaValue('gamma-audiencia', 'Público general')">General</span>
+                         </div>
+                         <input type="text" id="gamma-audiencia" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-neuro-green/50 transition-colors" placeholder="O escribe quiénes son..." oninput="updateGammaPrompts()">
                      </div>
-                     <!-- COSTOS -->
                      <div class="bg-black/60 rounded-xl border border-white/5 p-4">
-                         <label class="text-neuro-green font-bold text-xs uppercase mb-2 block">Costos Directos ($)</label>
-                         <input type="number" id="input-costos" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-neuro-green/50 transition-colors" placeholder="0.00" oninput="updatePromptB3()">
-                         <p class="text-[10px] text-gray-500 mt-1 italic">Gastos que desaparecen si dejas la actividad.</p>
+                         <label class="text-neuro-green font-bold text-xs uppercase mb-2 block">Objetivo</label>
+                         <div class="flex gap-2 overflow-x-auto pb-2 mb-2 custom-scrollbar">
+                             <span class="chip-select px-3 py-1 rounded-full border border-gray-700 text-gray-400 hover:text-white" onclick="setGammaValue('gamma-objetivo', 'Informar')">Informar</span>
+                             <span class="chip-select px-3 py-1 rounded-full border border-gray-700 text-gray-400 hover:text-white" onclick="setGammaValue('gamma-objetivo', 'Persuadir')">Persuadir</span>
+                             <span class="chip-select px-3 py-1 rounded-full border border-gray-700 text-gray-400 hover:text-white" onclick="setGammaValue('gamma-objetivo', 'Capacitar')">Capacitar</span>
+                             <span class="chip-select px-3 py-1 rounded-full border border-gray-700 text-gray-400 hover:text-white" onclick="setGammaValue('gamma-objetivo', 'Vender')">Vender</span>
+                         </div>
+                         <input type="text" id="gamma-objetivo" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-neuro-green/50 transition-colors" placeholder="Informar, vender..." oninput="updateGammaPrompts()">
                      </div>
-                     <!-- TIEMPO -->
                      <div class="bg-black/60 rounded-xl border border-white/5 p-4">
-                         <label class="text-neuro-green font-bold text-xs uppercase mb-2 block">Tiempo (Horas/Mes)</label>
-                         <input type="number" id="input-tiempo" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-neuro-green/50 transition-colors" placeholder="0" oninput="updatePromptB3()">
-                         <p class="text-[10px] text-gray-500 mt-1 italic">Incluye traslados, preparación y mensajes.</p>
+                         <label class="text-neuro-green font-bold text-xs uppercase mb-2 block">Formato</label>
+                         <div class="flex gap-2 overflow-x-auto pb-2 mb-2 custom-scrollbar">
+                             <span class="chip-select px-3 py-1 rounded-full border border-gray-700 text-gray-400 hover:text-white" onclick="setGammaValue('gamma-formato', 'Presencial')">Presencial</span>
+                             <span class="chip-select px-3 py-1 rounded-full border border-gray-700 text-gray-400 hover:text-white" onclick="setGammaValue('gamma-formato', 'Zoom/Virtual')">Zoom</span>
+                             <span class="chip-select px-3 py-1 rounded-full border border-gray-700 text-gray-400 hover:text-white" onclick="setGammaValue('gamma-formato', 'Envío por correo (Asincrónico)')">Por Correo</span>
+                         </div>
+                         <input type="text" id="gamma-formato" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-neuro-green/50 transition-colors" placeholder="Ej: Presencial" oninput="updateGammaPrompts()">
                      </div>
                  </div>
 
-                 <!-- IMPACTO -->
-                 <div class="bg-black/60 rounded-xl border border-white/5 p-4">
-                     <label class="text-neuro-green font-bold text-xs uppercase mb-2 block">Impacto Esperado (30 días)</label>
-                     <div class="flex gap-2 overflow-x-auto pb-2 mb-2 custom-scrollbar">
-                         <span class="chip-select px-3 py-1 rounded-full border border-gray-700 text-gray-400 hover:text-white" onclick="setInputValue('input-impacto', 'Estabilidad')">Estabilidad</span>
-                         <span class="chip-select px-3 py-1 rounded-full border border-gray-700 text-gray-400 hover:text-white" onclick="setInputValue('input-impacto', 'Estabilidad con desgaste')">Estabilidad c/desgaste</span>
-                         <span class="chip-select px-3 py-1 rounded-full border border-gray-700 text-gray-400 hover:text-white" onclick="setInputValue('input-impacto', 'Crecimiento moderado')">Crecimiento moderado</span>
-                         <span class="chip-select px-3 py-1 rounded-full border border-gray-700 text-gray-400 hover:text-white" onclick="setInputValue('input-impacto', 'Más ingresos con más carga')">Más ingresos c/carga</span>
-                         <span class="chip-select px-3 py-1 rounded-full border border-gray-700 text-gray-400 hover:text-white" onclick="setInputValue('input-impacto', 'Mayor carga sin mejora')">Mayor carga s/mejora</span>
-                         <span class="chip-select px-3 py-1 rounded-full border border-gray-700 text-gray-400 hover:text-white" onclick="setInputValue('input-impacto', 'Incertidumbre')">Incertidumbre</span>
+                 <!-- GRID 2: Nivel, Tono, Duración -->
+                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                     <div class="bg-black/60 rounded-xl border border-white/5 p-4">
+                         <label class="text-neuro-green font-bold text-xs uppercase mb-2 block">Nivel de la audiencia</label>
+                         <div class="flex gap-2 overflow-x-auto pb-2 mb-2 custom-scrollbar">
+                             <span class="chip-select px-3 py-1 rounded-full border border-gray-700 text-gray-400 hover:text-white" onclick="setGammaValue('gamma-nivel', 'Básico')">Básico</span>
+                             <span class="chip-select px-3 py-1 rounded-full border border-gray-700 text-gray-400 hover:text-white" onclick="setGammaValue('gamma-nivel', 'Intermedio')">Intermedio</span>
+                             <span class="chip-select px-3 py-1 rounded-full border border-gray-700 text-gray-400 hover:text-white" onclick="setGammaValue('gamma-nivel', 'Avanzado')">Avanzado</span>
+                         </div>
+                         <input type="text" id="gamma-nivel" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-neuro-green/50 transition-colors" placeholder="Básico, experto..." oninput="updateGammaPrompts()">
                      </div>
-                     <input type="text" id="input-impacto" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-neuro-green/50 transition-colors" placeholder="O escribe..." oninput="updatePromptB3()">
-                 </div>
-
-                 <!-- RIESGO PRINCIPAL -->
-                 <div class="bg-black/60 rounded-xl border border-white/5 p-4">
-                     <label class="text-neuro-green font-bold text-xs uppercase mb-2 block">Riesgo Principal</label>
-                     <div class="flex gap-2 overflow-x-auto pb-2 mb-2 custom-scrollbar">
-                         <span class="chip-select px-3 py-1 rounded-full border border-gray-700 text-gray-400 hover:text-white" onclick="setInputValue('input-riesgo', 'Desgaste personal')">Desgaste personal</span>
-                         <span class="chip-select px-3 py-1 rounded-full border border-gray-700 text-gray-400 hover:text-white" onclick="setInputValue('input-riesgo', 'Falta de tiempo')">Falta de tiempo</span>
-                         <span class="chip-select px-3 py-1 rounded-full border border-gray-700 text-gray-400 hover:text-white" onclick="setInputValue('input-riesgo', 'Precio bajo para el tiempo')">Precio bajo</span>
-                         <span class="chip-select px-3 py-1 rounded-full border border-gray-700 text-gray-400 hover:text-white" onclick="setInputValue('input-riesgo', 'Ingresos inestables')">Ingresos inestables</span>
-                         <span class="chip-select px-3 py-1 rounded-full border border-gray-700 text-gray-400 hover:text-white" onclick="setInputValue('input-riesgo', 'Dependencia pocos clientes')">Dependencia clientes</span>
-                         <span class="chip-select px-3 py-1 rounded-full border border-gray-700 text-gray-400 hover:text-white" onclick="setInputValue('input-riesgo', 'Estancamiento')">Estancamiento</span>
+                     <div class="bg-black/60 rounded-xl border border-white/5 p-4">
+                         <label class="text-neuro-green font-bold text-xs uppercase mb-2 block">Tono del mensaje</label>
+                         <div class="flex gap-2 overflow-x-auto pb-2 mb-2 custom-scrollbar">
+                             <span class="chip-select px-3 py-1 rounded-full border border-gray-700 text-gray-400 hover:text-white" onclick="setGammaValue('gamma-tono', 'Formal y serio')">Formal</span>
+                             <span class="chip-select px-3 py-1 rounded-full border border-gray-700 text-gray-400 hover:text-white" onclick="setGammaValue('gamma-tono', 'Cercano y empático')">Cercano</span>
+                             <span class="chip-select px-3 py-1 rounded-full border border-gray-700 text-gray-400 hover:text-white" onclick="setGammaValue('gamma-tono', 'Ejecutivo y directo')">Ejecutivo</span>
+                         </div>
+                         <input type="text" id="gamma-tono" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-neuro-green/50 transition-colors" placeholder="Formal, directo..." oninput="updateGammaPrompts()">
                      </div>
-                     <input type="text" id="input-riesgo" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-neuro-green/50 transition-colors" placeholder="O escribe..." oninput="updatePromptB3()">
-                 </div>
-
-                 <!-- OBSERVACIÓN -->
-                 <div class="bg-black/60 rounded-xl border border-white/5 p-4">
-                     <label class="text-neuro-green font-bold text-xs uppercase mb-2 block">Observación Personal</label>
-                     <div class="flex gap-2 overflow-x-auto pb-2 mb-2 custom-scrollbar">
-                         <span class="chip-select px-3 py-1 rounded-full border border-gray-700 text-gray-400 hover:text-white" onclick="setInputValue('input-obs', 'Trabajo constante, poco margen')">Poco margen</span>
-                         <span class="chip-select px-3 py-1 rounded-full border border-gray-700 text-gray-400 hover:text-white" onclick="setInputValue('input-obs', 'Me exige más energía de la que pensaba')">Mucha energía</span>
-                         <span class="chip-select px-3 py-1 rounded-full border border-gray-700 text-gray-400 hover:text-white" onclick="setInputValue('input-obs', 'Dependo de muchas horas')">Dependencia horas</span>
-                         <span class="chip-select px-3 py-1 rounded-full border border-gray-700 text-gray-400 hover:text-white" onclick="setInputValue('input-obs', 'Sensación de límite')">Sensación límite</span>
+                     <div class="bg-black/60 rounded-xl border border-white/5 p-4">
+                         <label class="text-neuro-green font-bold text-xs uppercase mb-2 block">Duración Estimada</label>
+                         <input type="number" id="gamma-duracion" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-neuro-green/50 transition-colors" placeholder="Minutos (ej: 20)" oninput="updateGammaPrompts()">
                      </div>
-                     <input type="text" id="input-obs" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-neuro-green/50 transition-colors" placeholder="O escribe tu sensación..." oninput="updatePromptB3()">
                  </div>
-
              </div>
         </section>
 
-        <!-- FASE 2: PROMPT PRINCIPAL (FILTRO DE REALIDAD) -->
+        <!-- PROMPT 1: STORYTELLER -->
         <article class="glass-panel rounded-3xl p-1 relative group">
           <div class="absolute -inset-0.5 bg-gradient-to-r from-neuro-green to-neuro-dark opacity-30 group-hover:opacity-50 rounded-3xl blur transition duration-500"></div>
           <div class="relative bg-neuro-dark/90 h-full rounded-[20px] p-6 md:p-8 overflow-hidden">
             <div class="relative z-10">
               <div class="flex items-center gap-3 mb-6">
                  <div class="bg-neuro-green/10 p-2 rounded-lg border border-neuro-green/30">
-                    <i data-lucide="compass" class="text-neuro-green w-6 h-6"></i>
+                    <i data-lucide="presentation" class="text-neuro-green w-6 h-6"></i>
                  </div>
-                <h3 class="text-2xl font-orbitron font-bold text-white tracking-wide">EL FILTRO DE REALIDAD</h3>
+                <h3 class="text-2xl font-orbitron font-bold text-white tracking-wide">Arquitecto de Presentaciones</h3>
               </div>
               <p class="text-sm text-gray-300 mb-6 font-light border-l-2 border-neuro-green/30 pl-4">
-                Analiza si lo que haces hoy es sostenible. <span class="text-neuro-green">El prompt se actualiza automáticamente con tus respuestas de arriba.</span>
+                Diseña el guion y la estructura narrativa diapositiva por diapositiva.
               </p>
-              <div class="bg-black/80 rounded-xl border border-white/5 p-6 font-mono text-sm text-gray-300 leading-relaxed shadow-inner">
-                <div id="prompt-b3-main">
-<div class="mb-4"><strong class="text-neuro-green">## ROL</strong></div>
-<div class="mb-4">Actuá como analista de decisiones económicas y laborales para personas activas. Tu función no es enseñar teoría ni motivar, sino ayudar a decidir con claridad en el corto plazo.</div>
-
-<div class="mb-4"><strong class="text-neuro-green">## CONTEXTO</strong></div>
-<div class="mb-4">Estoy evaluando una decisión económica o laboral. Trabajo con estimaciones, no con números perfectos. Quiero entender si lo que hago hoy es conveniente, sostenible o si necesita ajustes.</div>
-
-<div class="mb-4"><strong class="text-neuro-green">## DATOS</strong></div>
-<ul class="list-none space-y-2 pl-4 border-l border-gray-700 text-gray-400 text-xs mb-4">
-    <li><strong>Actividad:</strong> <span id="out-actividad">[COMPLETAR ARRIBA]</span></li>
-    <li><strong>Ingreso mensual estimado:</strong> <span id="out-ingreso">[COMPLETAR ARRIBA]</span></li>
-    <li><strong>Costos directos mensuales:</strong> <span id="out-costos">[COMPLETAR ARRIBA]</span></li>
-    <li><strong>Tiempo mensual invertido (hs):</strong> <span id="out-tiempo">[COMPLETAR ARRIBA]</span></li>
-    <li><strong>Impacto esperado (30 días):</strong> <span id="out-impacto">[COMPLETAR ARRIBA]</span></li>
-    <li><strong>Riesgo principal:</strong> <span id="out-riesgo">[COMPLETAR ARRIBA]</span></li>
-    <li><strong>Observación personal:</strong> <span id="out-obs">[COMPLETAR ARRIBA]</span></li>
-</ul>
-
-<div class="mb-4"><strong class="text-neuro-green">## INSTRUCCIONES</strong></div>
-<div class="mb-4">
-    1. Analizá los datos sin suavizar conclusiones ni relativizar el problema.<br>
-    2. Si los datos muestran un problema, decilo de forma directa.<br>
-    3. No pidas completar archivos ni Excel. Trabajá solo con la información del chat.<br>
-    4. Priorizá el corto plazo y la relación ingreso–tiempo–desgaste.<br>
-    5. No propongas más de una acción concreta.
-</div>
-
-<div class="mb-4"><strong class="text-neuro-green">## FORMATO DE RESPUESTA OBLIGATORIO</strong></div>
-<ul class="list-none space-y-1 pl-4 border-l border-gray-700 text-gray-400 text-xs">
-    <li>1. Qué estoy viendo</li>
-    <li>2. Problema real</li>
-    <li>3. Decisión recomendada</li>
-    <li>4. Error a evitar</li>
-    <li>5. Acción concreta para los próximos 7 días</li>
-</ul>
+              <div class="bg-black/80 rounded-xl border border-white/5 p-6 font-mono text-sm text-gray-300 leading-relaxed shadow-inner overflow-x-auto">
+                <div id="prompt-gamma-1">
+<div class="mb-4"><strong class="text-neuro-green">**R (ROL):**</strong><br>Eres un Arquitecto de Presentaciones y Storyteller Ejecutivo. Tu trabajo es convertir ideas en una narrativa clara, persuasiva y fácil de exponer, asegurando ritmo, coherencia y foco en decisiones. No rellenes: priorizá estructura, claridad y acción.</div>
+<div class="mb-4"><strong class="text-neuro-green">**C (CONTEXTO):**</strong><br>
+- Audiencia: <span id="out-g-aud-1" class="text-gray-500">[Audiencia]</span><br>
+- Objetivo: <span id="out-g-obj-1" class="text-gray-500">[Objetivo]</span><br>
+- Duración: <span id="out-g-dur-1" class="text-gray-500">[Minutos]</span> min<br>
+- Nivel: <span id="out-g-niv-1" class="text-gray-500">[Nivel]</span><br>
+- Tono: <span id="out-g-ton-1" class="text-gray-500">[Tono]</span><br>
+- Formato: <span id="out-g-for-1" class="text-gray-500">[Formato]</span></div>
+<div class="mb-4"><strong class="text-neuro-green">**I (INSTRUCCIONES):**</strong><br>Diseñá un guion “diapositiva por diapositiva” para una presentación sobre <span id="out-g-tema-1" class="text-gray-500 font-bold">[TEMA]</span>.</div>
+<div class="mb-4"><strong class="text-white">REGLAS DE CALIDAD (para evitar resultados vagos):</strong><br>
+1) Una diapositiva = una idea central. No satures.<br>
+2) Texto en pantalla mínimo: máximo 25 palabras por diapositiva.<br>
+3) Nada de relleno: cada diapositiva debe aportar al objetivo.<br>
+4) Si falta información crítica, haceme hasta 3 preguntas antes de armar la estructura.</div>
+<div class="mb-4"><strong class="text-white">ESTRUCTURA NARRATIVA OBLIGATORIA (para que fluya):</strong><br>
+- Inicio: problema + por qué importa<br>
+- Cuerpo: 3–4 ideas clave con evidencia/ejemplos<br>
+- Aplicación: cómo se usa / pasos / decisión<br>
+- Cierre: síntesis + llamada a la acción o takeaway</div>
+<div class="mb-4"><strong class="text-white">ENTREGABLE (por cada diapositiva entregá en este orden):</strong><br>
+1) Título (corto y claro)<br>
+2) Propósito (1 línea: para qué existe)<br>
+3) Mensaje clave (1 frase)<br>
+4) Visual sugerido (foto/diagrama/tabla/ícono)<br>
+5) Guion del orador (1–2 líneas, lo que digo)</div>
+<div><strong class="text-neuro-green">AL FINAL:</strong><br>Proponé 3 preguntas difíciles que podría hacer el público y una respuesta breve para cada una.</div>
                 </div>
               </div>
               <div class="mt-8 flex justify-end">
-                <button onclick="copyToClipboard('prompt-b3-main', this)" 
+                <button onclick="copyToClipboard('prompt-gamma-1', this)" 
                         class="btn-cyber flex items-center justify-center gap-3 bg-neuro-green text-black font-orbitron font-bold py-3 px-8 rounded-xl hover:bg-white transition-all duration-300 shadow-[0_0_20px_rgba(154,255,95,0.3)] hover:shadow-[0_0_30px_rgba(154,255,95,0.6)] w-full sm:w-auto">
                   <i data-lucide="copy" class="w-4 h-4"></i>
                   <span>COPIAR PROMPT</span>
@@ -1323,84 +879,66 @@ Con la información que tienes de mi , ejecuta el día número uno. voy a suvbir
           </div>
         </article>
 
-        <!-- FASE 3: HERRAMIENTAS TÁCTICAS (GRID 3 COLUMNAS) -->
-        <h3 class="text-xl font-orbitron font-bold text-white mt-12 mb-6 text-center">HERRAMIENTAS TÁCTICAS</h3>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            
-            <!-- 1. COMPARAR (AZUL) -->
-            <article class="glass-panel rounded-2xl p-6 relative group border-t-2 border-neuro-blue/50">
-                 <div class="flex items-center gap-3 mb-4">
-                    <i data-lucide="arrow-left-right" class="text-neuro-blue-light w-5 h-5"></i>
-                    <h4 class="font-orbitron font-bold text-white text-sm">Comparar A vs B</h4>
+        <!-- PROMPT 2: DIRECTOR DE ARTE -->
+        <article class="glass-panel rounded-3xl p-1 relative group mt-8">
+          <div class="absolute -inset-0.5 bg-gradient-to-r from-neuro-blue-light to-neuro-dark opacity-30 group-hover:opacity-50 rounded-3xl blur transition duration-500"></div>
+          <div class="relative bg-neuro-dark/90 h-full rounded-[20px] p-6 md:p-8 overflow-hidden">
+            <div class="relative z-10">
+              <div class="flex items-center gap-3 mb-6">
+                 <div class="bg-neuro-blue-light/10 p-2 rounded-lg border border-neuro-blue-light/30">
+                    <i data-lucide="palette" class="text-neuro-blue-light w-6 h-6"></i>
                  </div>
-                 <p class="text-[10px] text-gray-400 mb-4 h-10">Cuando dudas entre dos opciones y no quieres decidir por intuición.</p>
-                 
-                 <div class="bg-black/60 rounded-lg p-3 h-48 overflow-y-auto custom-scrollbar border border-white/5 mb-4">
-                    <div id="prompt-b3-compare" class="text-[10px] font-mono text-gray-300">
-<strong class="text-neuro-blue-light">## ROL:</strong> Analista de decisiones.<br>
-<strong class="text-neuro-blue-light">## CONTEXTO:</strong> Dudo entre dos opciones.<br>
-<strong class="text-neuro-blue-light">## DATOS:</strong><br>
-Opción A: [Descrip, Ingreso, Costo, Horas, Riesgo]<br>
-Opción B: [Descrip, Ingreso, Costo, Horas, Riesgo]<br>
-<strong class="text-neuro-blue-light">## INSTRUCCIONES:</strong><br>
-Compará priorizando ingreso real y tiempo. Elige una sola opción como la más conveniente HOY.<br>
-<strong class="text-neuro-blue-light">## FORMATO:</strong><br>
-1. Diferencia clave / 2. Opción ganadora / 3. Riesgo / 4. Error a evitar / 5. Acción inmediata.
-                    </div>
-                 </div>
-                 <button onclick="copyToClipboard('prompt-b3-compare', this)" class="w-full py-2 bg-neuro-blue/10 border border-neuro-blue text-neuro-blue-light text-[10px] font-bold font-orbitron rounded hover:bg-neuro-blue hover:text-white transition-colors">COPIAR</button>
-            </article>
+                <h3 class="text-2xl font-orbitron font-bold text-white tracking-wide">Director de Arte</h3>
+              </div>
+              <p class="text-sm text-gray-300 mb-6 font-light border-l-2 border-neuro-blue-light/30 pl-4">
+                Sugerencias visuales y layouts para ejecutar en PowerPoint, Canva o Gamma.
+              </p>
+              <div class="bg-black/80 rounded-xl border border-white/5 p-6 font-mono text-sm text-gray-300 leading-relaxed shadow-inner overflow-x-auto">
+                <div id="prompt-gamma-2">
+<div class="mb-4"><strong class="text-neuro-blue-light">**R (ROL):**</strong><br>Eres un Director de Arte y Diseñador de Presentaciones (nivel consultoría). Tu foco es claridad, jerarquía visual y diseño moderno ejecutable en PowerPoint/Canva. No decorás: diseñás para que el mensaje se entienda rápido.</div>
+<div class="mb-4"><strong class="text-neuro-blue-light">**C (CONTEXTO):**</strong><br>
+- Audiencia: <span id="out-g-aud-2" class="text-gray-500">[Audiencia]</span><br>
+- Objetivo: <span id="out-g-obj-2" class="text-gray-500">[Objetivo]</span><br>
+- Duración: <span id="out-g-dur-2" class="text-gray-500">[Minutos]</span> min<br>
+- Nivel: <span id="out-g-niv-2" class="text-gray-500">[Nivel]</span><br>
+- Tono: <span id="out-g-ton-2" class="text-gray-500">[Tono]</span><br>
+- Formato: <span id="out-g-for-2" class="text-gray-500">[Formato]</span></div>
+<div class="mb-4"><strong class="text-neuro-blue-light">**I (INSTRUCCIONES):**</strong><br>Sugerí orientación profesional de diseño y aspectos visuales para una presentación sobre <span id="out-g-tema-2" class="text-gray-500 font-bold">[TEMA]</span>.</div>
+<div class="mb-4"><strong class="text-white">PASO 0 (si falta el índice):</strong><br>Si NO te doy la lista de diapositivas:<br>1) Proponé un índice de 8–12 diapositivas (solo títulos).<br>2) Luego aplicá el diseño a ese índice.</div>
+<div class="mb-4"><strong class="text-white">REGLAS DE CALIDAD (claridad + ejecución):</strong><br>
+1) Una diapositiva = una idea central.<br>
+2) Accesibilidad: tipografía mínima 24pt; alto contraste; nunca texto largo sobre foto sin overlay.<br>
+3) No recargues: máximo 1 visual principal por diapositiva.<br>
+4) Consistencia: usá 2 layouts repetibles (A y B) y 1 layout especial (portada/cierre).</div>
+<div class="mb-4"><strong class="text-white">ENTREGABLE (por cada diapositiva, en 4 ítems):</strong><br>
+1) Objetivo visual (qué se entiende en 3 segundos)<br>
+2) Layout (A / B / Especial) + estructura (ej: título arriba + 2 columnas)<br>
+3) Visual principal (qué usar) + descripción concreta (qué muestra)<br>
+4) Regla de texto (máx. palabras sugeridas) + 1 error común a evitar (distinto por tipo)</div>
+<div><strong class="text-neuro-blue-light">PACK GLOBAL (al final):</strong><br>
+1) Sistema visual:<br>
+- Paleta: base neutra + 1 color acento + 1 color alerta opcional<br>
+- Tipografías: 1 para títulos + 1 para cuerpo (máximo 2 opciones)<br>
+- Estilo de íconos: lineales o sólidos (uno solo)<br>
+- Estilo de gráficos: consistentes (mismo grosor/etiquetas/leyendas)<br>
+2) Cuándo usar cada layout:<br>
+- A: idea/definición<br>
+- B: comparación/datos<br>
+- Especial: portada, separadores, cierre<br>
+3) Checklist final (5 ítems) para validar que quedó moderno y claro.</div>
+                </div>
+              </div>
+              <div class="mt-8 flex justify-end">
+                <button onclick="copyToClipboard('prompt-gamma-2', this)" 
+                        class="btn-cyber flex items-center justify-center gap-3 bg-neuro-blue-light/10 border border-neuro-blue-light text-neuro-blue-light hover:bg-neuro-blue-light hover:text-white font-orbitron text-xs font-bold py-3 px-8 rounded-xl transition-all w-full sm:w-auto">
+                  <i data-lucide="copy" class="w-4 h-4"></i>
+                  <span>COPIAR PROMPT</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
 
-            <!-- 2. SIMULAR (VERDE) -->
-            <article class="glass-panel rounded-2xl p-6 relative group border-t-2 border-neuro-green/50">
-                 <div class="flex items-center gap-3 mb-4">
-                    <i data-lucide="zap" class="text-neuro-green w-5 h-5"></i>
-                    <h4 class="font-orbitron font-bold text-white text-sm">Simular Cambio</h4>
-                 </div>
-                 <p class="text-[10px] text-gray-400 mb-4 h-10">¿Qué pasa si subo precios o reduzco horas? Pruébalo antes de hacerlo.</p>
-                 
-                 <div class="bg-black/60 rounded-lg p-3 h-48 overflow-y-auto custom-scrollbar border border-white/5 mb-4">
-                    <div id="prompt-b3-simulate" class="text-[10px] font-mono text-gray-300">
-<strong class="text-neuro-green">## ROL:</strong> Analista económico práctico.<br>
-<strong class="text-neuro-green">## CONTEXTO:</strong> Simular un cambio puntual.<br>
-<strong class="text-neuro-green">## DATOS:</strong><br>
-Situación Actual: [Actividad, Ingreso, Costo, Horas]<br>
-Cambio a Simular: [Subir precio, quitar gasto, etc]<br>
-<strong class="text-neuro-green">## INSTRUCCIONES:</strong><br>
-Evaluá impacto en ingreso/tiempo. Decí si es reversible.<br>
-<strong class="text-neuro-green">## FORMATO:</strong><br>
-1. Qué cambia / 2. Beneficio / 3. Riesgo / 4. Decisión / 5. Prueba de 7 días.
-                    </div>
-                 </div>
-                 <button onclick="copyToClipboard('prompt-b3-simulate', this)" class="w-full py-2 bg-neuro-green/10 border border-neuro-green text-neuro-green text-[10px] font-bold font-orbitron rounded hover:bg-neuro-green hover:text-black transition-colors">COPIAR</button>
-            </article>
-
-            <!-- 3. CUELLO DE BOTELLA (BLANCO/GRIS) -->
-            <article class="glass-panel rounded-2xl p-6 relative group border-t-2 border-gray-500">
-                 <div class="flex items-center gap-3 mb-4">
-                    <i data-lucide="alert-triangle" class="text-gray-300 w-5 h-5"></i>
-                    <h4 class="font-orbitron font-bold text-white text-sm">Cuello de Botella</h4>
-                 </div>
-                 <p class="text-[10px] text-gray-400 mb-4 h-10">Cuando sientes estancamiento o desorden pero no sabes por qué.</p>
-                 
-                 <div class="bg-black/60 rounded-lg p-3 h-48 overflow-y-auto custom-scrollbar border border-white/5 mb-4">
-                    <div id="prompt-b3-bottleneck" class="text-[10px] font-mono text-gray-300">
-<strong class="text-white">## ROL:</strong> Analista organizacional.<br>
-<strong class="text-white">## CONTEXTO:</strong> Siento que algo no funciona.<br>
-<strong class="text-white">## DATOS:</strong><br>
-Actividad: [X], Ingreso: [X], Horas: [X]<br>
-Sensación general: [Cansancio, desorden, presión]<br>
-<strong class="text-white">## INSTRUCCIONES:</strong><br>
-Identificá qué traba el sistema (precio, tiempo, foco). Proponé SOLO UNA corrección.<br>
-<strong class="text-white">## FORMATO:</strong><br>
-1. Qué traba el sistema / 2. Por qué / 3. Qué dejar de hacer / 4. Ajuste recomendado / 5. Acción inmediata.
-                    </div>
-                 </div>
-                 <button onclick="copyToClipboard('prompt-b3-bottleneck', this)" class="w-full py-2 bg-white/5 border border-white/30 text-gray-300 text-[10px] font-bold font-orbitron rounded hover:bg-white hover:text-black transition-colors">COPIAR</button>
-            </article>
-
-        </div>
     </div>
 
   </main>
@@ -1428,7 +966,7 @@ Identificá qué traba el sistema (precio, tiempo, foco). Proponé SOLO UNA corr
             <img src="https://img.icons8.com/color/96/whatsapp--v1.png" width="48" height="48" alt="WhatsApp" class="drop-shadow-2xl">
             <span class="text-[10px] font-orbitron text-gray-500 group-hover:text-neuro-green transition-colors uppercase tracking-widest">WhatsApp</span>
         </a>
-        <a href="mailto:vanesapia11@gmail.com" target="_blank" class="group flex flex-col items-center gap-3 transition-transform duration-300 hover:-translate-y-2">
+        <a href="mailto:piavanesa11@gmail.com" target="_blank" class="group flex flex-col items-center gap-3 transition-transform duration-300 hover:-translate-y-2">
              <div class="w-12 h-12 flex items-center justify-center bg-white/10 rounded-full border border-white/20 group-hover:bg-neuro-blue/20 group-hover:border-neuro-blue transition-colors">
                 <i data-lucide="mail" class="w-6 h-6 text-gray-400 group-hover:text-neuro-blue-light transition-colors"></i>
              </div>
@@ -1477,13 +1015,9 @@ Identificá qué traba el sistema (precio, tiempo, foco). Proponé SOLO UNA corr
             <div id="pdf-content-1" style="background: #f4f4f4; padding: 15px; border-radius: 8px; font-family: monospace; font-size: 11px; line-height: 1.4;"></div>
          </div>
 
+         <!-- Orden actualizado en PDF: Ejemplo antes que Maestro -->
          <div class="pdf-no-break">
-            <h4 style="font-size: 14px; font-weight: bold; color: black; margin-bottom: 10px;">Prompt Maestro</h4>
-            <div id="pdf-content-2" style="background: #f4f4f4; padding: 15px; border-radius: 8px; font-family: monospace; font-size: 11px; line-height: 1.4;"></div>
-         </div>
-
-         <div class="pdf-no-break">
-            <h4 style="font-size: 14px; font-weight: bold; color: black; margin-bottom: 10px;">Ejemplo Práctico (Turismo)</h4>
+            <h4 style="font-size: 14px; font-weight: bold; color: black; margin-bottom: 10px;">Ejemplo Práctico (Educación)</h4>
             <div id="pdf-content-example" style="background: #f4f4f4; padding: 15px; border-radius: 8px; font-family: monospace; font-size: 11px; line-height: 1.4;"></div>
          </div>
      </div>
@@ -1493,7 +1027,7 @@ Identificá qué traba el sistema (precio, tiempo, foco). Proponé SOLO UNA corr
          <h3 style="background: #000; color: #2100E5; display: inline-block; padding: 5px 15px; border-radius: 4px; font-size: 14px; font-weight: bold; margin-bottom: 20px;">BLOQUE 2: NOTEBOOK LM (R.C.I.)</h3>
          
          <div class="pdf-no-break">
-            <h4 style="font-size: 14px; font-weight: bold; color: black; margin-bottom: 10px;">1. Identificación de Contradicciones (Legal)</h4>
+            <h4 style="font-size: 14px; font-weight: bold; color: black; margin-bottom: 10px;">1. Investigación Académica</h4>
             <div id="pdf-content-nb-1" style="background: #f0f4ff; padding: 15px; border-radius: 8px; font-family: monospace; font-size: 11px; line-height: 1.4;"></div>
          </div>
 
@@ -1503,7 +1037,7 @@ Identificá qué traba el sistema (precio, tiempo, foco). Proponé SOLO UNA corr
          </div>
 
          <div class="pdf-no-break">
-            <h4 style="font-size: 14px; font-weight: bold; color: black; margin-bottom: 10px;">3. Borrador de Escrito (Abogados)</h4>
+            <h4 style="font-size: 14px; font-weight: bold; color: black; margin-bottom: 10px;">3. El Analista de "Líneas Invisibles"</h4>
             <div id="pdf-content-nb-3" style="background: #f0f4ff; padding: 15px; border-radius: 8px; font-family: monospace; font-size: 11px; line-height: 1.4;"></div>
          </div>
 
@@ -1516,47 +1050,20 @@ Identificá qué traba el sistema (precio, tiempo, foco). Proponé SOLO UNA corr
             <h4 style="font-size: 14px; font-weight: bold; color: black; margin-bottom: 10px;">5. Pensamiento Crítico (Estudiantes)</h4>
             <div id="pdf-content-nb-5" style="background: #f0f4ff; padding: 15px; border-radius: 8px; font-family: monospace; font-size: 11px; line-height: 1.4;"></div>
          </div>
-
-         <div class="pdf-no-break">
-            <h4 style="font-size: 14px; font-weight: bold; color: black; margin-bottom: 10px;">6. Emprendedores (Riesgos y Comparación)</h4>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                <div id="pdf-content-nb-6a" style="background: #f0f4ff; padding: 10px; border-radius: 8px; font-family: monospace; font-size: 10px; line-height: 1.4;"></div>
-                <div id="pdf-content-nb-6b" style="background: #f0f4ff; padding: 10px; border-radius: 8px; font-family: monospace; font-size: 10px; line-height: 1.4;"></div>
-            </div>
-         </div>
-
-         <!-- NUEVO MÓDULO VISUAL EN PDF -->
-         <div class="pdf-no-break" style="margin-top: 20px; border-top: 1px dashed #ccc; padding-top: 20px;">
-            <h4 style="font-size: 14px; font-weight: bold; color: #2100E5; margin-bottom: 10px; text-transform: uppercase;">Módulo Visual & Estrategia</h4>
-            <div id="pdf-content-visual-1" style="background: #fdf6e3; padding: 15px; border-radius: 8px; font-family: monospace; font-size: 10px; line-height: 1.4; border: 1px solid #ddd; margin-bottom: 10px;"></div>
-            <div id="pdf-content-nb-7" style="background: #f0f4ff; padding: 15px; border-radius: 8px; font-family: monospace; font-size: 11px; line-height: 1.4; border: 1px solid #ddd; margin-bottom: 10px;"></div>
-            <div id="pdf-content-visual-2" style="background: #fdf6e3; padding: 15px; border-radius: 8px; font-family: monospace; font-size: 10px; line-height: 1.4; border: 1px solid #ddd; margin-bottom: 10px;"></div>
-            <div id="pdf-content-visual-3" style="background: #fdf6e3; padding: 15px; border-radius: 8px; font-family: monospace; font-size: 10px; line-height: 1.4; border: 1px solid #ddd;"></div>
-         </div>
      </div>
 
      <!-- BLOQUE 3 - AGREGADO AL PDF -->
      <div style="margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 20px;">
-         <h3 style="background: #000; color: #fff; display: inline-block; padding: 5px 15px; border-radius: 4px; font-size: 14px; font-weight: bold; margin-bottom: 20px;">BLOQUE 3: BRÚJULA DE DECISIONES</h3>
+         <h3 style="background: #000; color: #fff; display: inline-block; padding: 5px 15px; border-radius: 4px; font-size: 14px; font-weight: bold; margin-bottom: 20px;">BLOQUE 3: PRESENTACIONES (GAMMA APP)</h3>
          
          <div class="pdf-no-break">
-            <h4 style="font-size: 14px; font-weight: bold; color: black; margin-bottom: 10px;">Prompt Principal (Filtro de Realidad)</h4>
-            <div id="pdf-content-b3-main" style="background: #f4f4f4; padding: 15px; border-radius: 8px; font-family: monospace; font-size: 11px; line-height: 1.4;"></div>
+            <h4 style="font-size: 14px; font-weight: bold; color: black; margin-bottom: 10px;">Arquitecto de Presentaciones</h4>
+            <div id="pdf-content-gamma-1" style="background: #f4f4f4; padding: 15px; border-radius: 8px; font-family: monospace; font-size: 11px; line-height: 1.4;"></div>
          </div>
 
-         <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
-             <div class="pdf-no-break">
-                <h4 style="font-size: 12px; font-weight: bold; color: #2100E5; margin-bottom: 5px;">Comparar</h4>
-                <div id="pdf-content-b3-compare" style="background: #f0f4ff; padding: 10px; border-radius: 8px; font-family: monospace; font-size: 9px; line-height: 1.4;"></div>
-             </div>
-             <div class="pdf-no-break">
-                <h4 style="font-size: 12px; font-weight: bold; color: #008000; margin-bottom: 5px;">Simular</h4>
-                <div id="pdf-content-b3-simulate" style="background: #f0fff4; padding: 10px; border-radius: 8px; font-family: monospace; font-size: 9px; line-height: 1.4;"></div>
-             </div>
-             <div class="pdf-no-break">
-                <h4 style="font-size: 12px; font-weight: bold; color: #333; margin-bottom: 5px;">Cuello de Botella</h4>
-                <div id="pdf-content-b3-bottleneck" style="background: #eee; padding: 10px; border-radius: 8px; font-family: monospace; font-size: 9px; line-height: 1.4;"></div>
-             </div>
+         <div class="pdf-no-break">
+            <h4 style="font-size: 14px; font-weight: bold; color: #2100E5; margin-bottom: 10px;">Director de Arte</h4>
+            <div id="pdf-content-gamma-2" style="background: #f0f4ff; padding: 15px; border-radius: 8px; font-family: monospace; font-size: 11px; line-height: 1.4;"></div>
          </div>
      </div>
      
@@ -1602,15 +1109,14 @@ Identificá qué traba el sistema (precio, tiempo, foco). Proponé SOLO UNA corr
       
       let currentSpan = document.getElementById(`word-${currentWordIndex}`);
       if (!currentSpan) {
+        // Añadimos un espacio natural de texto antes de la nueva palabra
+        if (currentWordIndex > 0) {
+            typeWriterElement.appendChild(document.createTextNode(' '));
+        }
         currentSpan = document.createElement('span');
         currentSpan.id = `word-${currentWordIndex}`;
         currentSpan.className = currentWordObj.class;
         typeWriterElement.appendChild(currentSpan);
-        if (currentWordIndex < wordsToType.length - 1) {
-            const space = document.createElement('span');
-            space.innerHTML = '&nbsp;';
-            typeWriterElement.appendChild(space);
-        }
       }
 
       if (!isDeleting && charIndex < fullText.length) {
@@ -1703,17 +1209,22 @@ Identificá qué traba el sistema (precio, tiempo, foco). Proponé SOLO UNA corr
       }, 2500);
     }
 
-    // === LÓGICA DEL GENERADOR DE CONTEXTO (BLOQUE 3) ===
-    function setInputValue(inputId, value) {
+    // === LÓGICA DEL GENERADOR GAMMA (BLOQUE 3) ===
+    function setGammaValue(inputId, value) {
         const input = document.getElementById(inputId);
         input.value = value;
-        updatePromptB3();
+        updateGammaPrompts();
         
         // Efecto visual en los chips del mismo grupo
         const parentDiv = input.parentElement;
         const chips = parentDiv.querySelectorAll('.chip-select');
         chips.forEach(chip => {
-            if(chip.innerText === value || (chip.innerText.includes(value) && value.length > 5)) {
+            // Convertimos ambos textos a minúsculas para comparar correctamente
+            const chipText = chip.innerText.trim().toLowerCase();
+            const targetValue = value.toLowerCase();
+            
+            // Si el valor largo (ej: "Formal y serio") incluye el texto corto del chip (ej: "Formal"), se selecciona
+            if(targetValue === chipText || targetValue.includes(chipText)) {
                 chip.classList.add('selected');
             } else {
                 chip.classList.remove('selected');
@@ -1721,36 +1232,42 @@ Identificá qué traba el sistema (precio, tiempo, foco). Proponé SOLO UNA corr
         });
     }
 
-    function updatePromptB3() {
+    function updateGammaPrompts() {
         // Obtener valores
-        const act = document.getElementById('input-actividad').value || "[COMPLETAR ARRIBA]";
-        const ing = document.getElementById('input-ingreso').value || "[COMPLETAR ARRIBA]";
-        const cos = document.getElementById('input-costos').value || "[COMPLETAR ARRIBA]";
-        const tie = document.getElementById('input-tiempo').value || "[COMPLETAR ARRIBA]";
-        const imp = document.getElementById('input-impacto').value || "[COMPLETAR ARRIBA]";
-        const rie = document.getElementById('input-riesgo').value || "[COMPLETAR ARRIBA]";
-        const obs = document.getElementById('input-obs').value || "[COMPLETAR ARRIBA]";
+        const tema = document.getElementById('gamma-tema').value || "[TEMA]";
+        const aud = document.getElementById('gamma-audiencia').value || "[Audiencia]";
+        const obj = document.getElementById('gamma-objetivo').value || "[Objetivo]";
+        const dur = document.getElementById('gamma-duracion').value || "[Minutos]";
+        const niv = document.getElementById('gamma-nivel').value || "[Nivel]";
+        const ton = document.getElementById('gamma-tono').value || "[Tono]";
+        const form = document.getElementById('gamma-formato').value || "[Formato]";
 
-        // Actualizar Prompt
-        document.getElementById('out-actividad').innerText = act;
-        document.getElementById('out-ingreso').innerText = ing;
-        document.getElementById('out-costos').innerText = cos;
-        document.getElementById('out-tiempo').innerText = tie;
-        document.getElementById('out-impacto').innerText = imp;
-        document.getElementById('out-riesgo').innerText = rie;
-        document.getElementById('out-obs').innerText = obs;
-        
-        // Colorear si está completo
-        const outputs = ['out-actividad', 'out-ingreso', 'out-costos', 'out-tiempo', 'out-impacto', 'out-riesgo', 'out-obs'];
-        outputs.forEach(id => {
-            const el = document.getElementById(id);
-            if (el.innerText !== "[COMPLETAR ARRIBA]") {
-                el.classList.add('text-neuro-green');
-                el.classList.remove('text-gray-500');
-            } else {
-                el.classList.remove('text-neuro-green');
+        // Función para actualizar los spans de un prompt específico
+        const updateFields = (promptNum) => {
+            const fields = {
+                'tema': tema, 'aud': aud, 'obj': obj, 'dur': dur, 'niv': niv, 'ton': ton, 'for': form
+            };
+            
+            for (const [key, val] of Object.entries(fields)) {
+                const el = document.getElementById(`out-g-${key}-${promptNum}`);
+                if (el) {
+                    el.innerText = val;
+                    // Logica de colores
+                    const isPlaceholder = val.startsWith('[') && val.endsWith(']');
+                    if (!isPlaceholder) {
+                        el.classList.add('text-neuro-green');
+                        el.classList.remove('text-gray-500');
+                    } else {
+                        el.classList.remove('text-neuro-green');
+                        el.classList.add('text-gray-500');
+                    }
+                }
             }
-        });
+        };
+
+        // Actualizar ambos prompts de Gamma
+        updateFields(1);
+        updateFields(2);
     }
 
     // PDF Optimizado para evitar cortes e incluir TODOS los bloques
@@ -1759,7 +1276,6 @@ Identificá qué traba el sistema (precio, tiempo, foco). Proponé SOLO UNA corr
         
         // Bloque 1
         document.getElementById('pdf-content-1').innerHTML = document.getElementById('prompt-content-1').innerHTML;
-        document.getElementById('pdf-content-2').innerHTML = document.getElementById('prompt-content-2').innerHTML;
         document.getElementById('pdf-content-example').innerHTML = document.getElementById('prompt-content-example').innerHTML;
 
         // Bloque 2 (NotebookLM)
@@ -1768,35 +1284,13 @@ Identificá qué traba el sistema (precio, tiempo, foco). Proponé SOLO UNA corr
         document.getElementById('pdf-content-nb-3').innerHTML = document.getElementById('prompt-nb-3').innerHTML;
         document.getElementById('pdf-content-nb-4').innerHTML = document.getElementById('prompt-nb-4').innerHTML;
         document.getElementById('pdf-content-nb-5').innerHTML = document.getElementById('prompt-nb-5').innerHTML;
-        document.getElementById('pdf-content-nb-6a').innerHTML = document.getElementById('prompt-nb-6a').innerHTML;
-        document.getElementById('pdf-content-nb-6b').innerHTML = document.getElementById('prompt-nb-6b').innerHTML;
-        
-        // Bloque 2 (Visual + Estrategia + Nuevos)
-        if(document.getElementById('prompt-visual-1')) {
-            document.getElementById('pdf-content-visual-1').innerHTML = document.getElementById('prompt-visual-1').innerHTML;
-        }
-        if(document.getElementById('prompt-nb-7')) {
-            document.getElementById('pdf-content-nb-7').innerHTML = document.getElementById('prompt-nb-7').innerHTML;
-        }
-        if(document.getElementById('prompt-visual-2')) {
-            document.getElementById('pdf-content-visual-2').innerHTML = document.getElementById('prompt-visual-2').innerHTML;
-        }
-        if(document.getElementById('prompt-visual-3')) {
-            document.getElementById('pdf-content-visual-3').innerHTML = document.getElementById('prompt-visual-3').innerHTML;
-        }
 
-        // Bloque 3 (NUEVO - Agregado al JS)
-        if(document.getElementById('prompt-b3-main')) {
-            document.getElementById('pdf-content-b3-main').innerHTML = document.getElementById('prompt-b3-main').innerHTML;
+        // Bloque 3 (Gamma App)
+        if(document.getElementById('prompt-gamma-1')) {
+            document.getElementById('pdf-content-gamma-1').innerHTML = document.getElementById('prompt-gamma-1').innerHTML;
         }
-        if(document.getElementById('prompt-b3-compare')) {
-            document.getElementById('pdf-content-b3-compare').innerHTML = document.getElementById('prompt-b3-compare').innerHTML;
-        }
-        if(document.getElementById('prompt-b3-simulate')) {
-            document.getElementById('pdf-content-b3-simulate').innerHTML = document.getElementById('prompt-b3-simulate').innerHTML;
-        }
-        if(document.getElementById('prompt-b3-bottleneck')) {
-            document.getElementById('pdf-content-b3-bottleneck').innerHTML = document.getElementById('prompt-b3-bottleneck').innerHTML;
+        if(document.getElementById('prompt-gamma-2')) {
+            document.getElementById('pdf-content-gamma-2').innerHTML = document.getElementById('prompt-gamma-2').innerHTML;
         }
 
         const element = document.getElementById('pdf-template');
