@@ -470,6 +470,69 @@
             </div>
           </div>
         </article>
+        
+        <!-- NUEVO PROMPT: GESTIÓN DEL AULA -->
+        <article class="glass-panel rounded-3xl p-1 relative group mt-8">
+          <div class="absolute -inset-0.5 bg-gradient-to-r from-neuro-green to-purple-800 opacity-20 group-hover:opacity-40 rounded-3xl blur transition duration-500"></div>
+          <div class="relative bg-neuro-dark/95 h-full rounded-[20px] p-6 md:p-8 overflow-hidden">
+            <div class="relative z-10">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="bg-neuro-green/10 p-2 rounded-lg border border-neuro-green/30">
+                    <i data-lucide="clipboard-list" class="text-neuro-green w-5 h-5"></i>
+                </div>
+                <h3 class="text-xl font-orbitron font-bold text-white tracking-wide">Gestión del Aula: El Asistente Administrativo</h3>
+              </div>
+              
+              <p class="text-sm text-gray-300 mb-6 font-light border-l-2 border-neuro-green/30 pl-4">
+                 Optimiza la organización y el flujo de trabajo docente. Completa los campos para personalizar las tareas.
+              </p>
+
+              <!-- INPUTS PARA COMPLETAR -->
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                  <div class="bg-black/60 rounded-xl border border-white/5 p-3">
+                      <label class="text-neuro-green font-bold text-[10px] uppercase mb-1 block">Materia</label>
+                      <input type="text" id="aula-materia" class="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-neuro-green/50 transition-colors" placeholder="Ej: Historia" oninput="updateAulaPrompt()">
+                  </div>
+                  <div class="bg-black/60 rounded-xl border border-white/5 p-3">
+                      <label class="text-neuro-green font-bold text-[10px] uppercase mb-1 block">Carrera / Curso</label>
+                      <input type="text" id="aula-carrera" class="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-neuro-green/50 transition-colors" placeholder="Ej: 2° Año" oninput="updateAulaPrompt()">
+                  </div>
+                  <div class="bg-black/60 rounded-xl border border-white/5 p-3">
+                      <label class="text-neuro-green font-bold text-[10px] uppercase mb-1 block">Tema a Evaluar</label>
+                      <input type="text" id="aula-tema" class="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-neuro-green/50 transition-colors" placeholder="Ej: Revolución de Mayo" oninput="updateAulaPrompt()">
+                  </div>
+              </div>
+
+              <div class="bg-black/80 rounded-xl border border-white/5 p-6 font-mono text-sm text-gray-300 leading-relaxed shadow-inner">
+                <div id="prompt-aula">
+<div class="mb-4"><strong class="text-neuro-green">**ROL:**</strong> Actúa como un Asistente Administrativo Docente eficiente y organizado.</div>
+
+<div class="mb-2"><strong class="text-white">TAREA 1: Organización de horarios</strong></div>
+<div class="mb-4 text-xs text-gray-400 pl-4 border-l border-gray-700">
+"Creá un horario semanal para mi clase de <strong class="text-neuro-green" id="out-aula-mat">[Materia]</strong> de <strong class="text-neuro-green" id="out-aula-car">[Carrera]</strong>, que incluya tiempo para actividades grupales, trabajo individual y evaluaciones."
+</div>
+
+<div class="mb-2"><strong class="text-white">TAREA 2: Seguimiento del progreso</strong></div>
+<div class="mb-4 text-xs text-gray-400 pl-4 border-l border-gray-700">
+"Creá preguntas de seguimiento para evaluar el progreso de los estudiantes en <strong class="text-neuro-green" id="out-aula-tema1">[Tema]</strong>."
+</div>
+
+<div class="mb-2"><strong class="text-white">TAREA 3: Gestión de recursos</strong></div>
+<div class="mb-4 text-xs text-gray-400 pl-4 border-l border-gray-700">
+"Recomendá recursos adicionales sobre <strong class="text-neuro-green" id="out-aula-tema2">[Tema]</strong>, como videos, artículos o aplicaciones educativas."
+</div>
+                </div>
+              </div>
+              <div class="mt-6 flex justify-end">
+                <button onclick="copyToClipboard('prompt-aula', this)" 
+                        class="btn-cyber flex items-center justify-center gap-2 bg-transparent border border-neuro-green text-neuro-green hover:bg-neuro-green hover:text-black font-orbitron text-xs font-bold py-3 px-6 rounded-lg transition-all w-full sm:w-auto">
+                  <i data-lucide="copy" class="w-3 h-3"></i>
+                  <span>COPIAR PROMPT</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
 
         <!-- SECCIÓN RECURSOS / DRIVE -->
         <section class="mt-16 mb-20">
@@ -1020,6 +1083,12 @@
             <h4 style="font-size: 14px; font-weight: bold; color: black; margin-bottom: 10px;">Ejemplo Práctico (Educación)</h4>
             <div id="pdf-content-example" style="background: #f4f4f4; padding: 15px; border-radius: 8px; font-family: monospace; font-size: 11px; line-height: 1.4;"></div>
          </div>
+
+         <!-- NUEVO PDF AULA -->
+         <div class="pdf-no-break">
+            <h4 style="font-size: 14px; font-weight: bold; color: black; margin-bottom: 10px;">Gestión del Aula (Asistente)</h4>
+            <div id="pdf-content-aula" style="background: #f4f4f4; padding: 15px; border-radius: 8px; font-family: monospace; font-size: 11px; line-height: 1.4;"></div>
+         </div>
      </div>
 
      <!-- BLOQUE 2 -->
@@ -1208,6 +1277,23 @@
         toast.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
       }, 2500);
     }
+    
+    // === LÓGICA DEL PROMPT DE GESTIÓN DE AULA (BLOQUE 1) ===
+    function updateAulaPrompt() {
+        const materia = document.getElementById('aula-materia').value || "[Materia]";
+        const carrera = document.getElementById('aula-carrera').value || "[Carrera]";
+        const tema = document.getElementById('aula-tema').value || "[Tema]";
+        
+        const outMateria = document.getElementById('out-aula-mat');
+        const outCarrera = document.getElementById('out-aula-car');
+        const outTema1 = document.getElementById('out-aula-tema1');
+        const outTema2 = document.getElementById('out-aula-tema2');
+        
+        if(outMateria) outMateria.textContent = materia;
+        if(outCarrera) outCarrera.textContent = carrera;
+        if(outTema1) outTema1.textContent = tema;
+        if(outTema2) outTema2.textContent = tema;
+    }
 
     // === LÓGICA DEL GENERADOR GAMMA (BLOQUE 3) ===
     function setGammaValue(inputId, value) {
@@ -1277,6 +1363,10 @@
         // Bloque 1
         document.getElementById('pdf-content-1').innerHTML = document.getElementById('prompt-content-1').innerHTML;
         document.getElementById('pdf-content-example').innerHTML = document.getElementById('prompt-content-example').innerHTML;
+        // NUEVO BLOQUE AULA
+        if(document.getElementById('prompt-aula')) {
+            document.getElementById('pdf-content-aula').innerHTML = document.getElementById('prompt-aula').innerHTML;
+        }
 
         // Bloque 2 (NotebookLM)
         document.getElementById('pdf-content-nb-1').innerHTML = document.getElementById('prompt-nb-1').innerHTML;
